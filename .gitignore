@@ -1,0 +1,13 @@
+# Ignore Python cache and environment files
+__pycache__/
+*.pyc
+.env
+*.sqlite3
+*.db
+.DS_Store
+.trash/
+outputs/
+# Ignore local development artifacts
+.idea/
+.vscode/
+*.log

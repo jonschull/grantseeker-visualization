@@ -1,0 +1,452 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Opportunity Landscape</title> <!-- Title will be dynamically set by JS -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    
+<style>
+    .custom-legend {
+        font-family: sans-serif;
+        font-size: 12px;
+        position: absolute;
+        top: 120px;
+        z-index: 1000;
+        max-height: 80vh;
+        overflow-y: auto;
+    }
+    .custom-legend-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 4px;
+    }
+    .legend-color-box {
+        width: 12px;
+        height: 12px;
+        margin-right: 8px;
+        border: 1px solid #ccc;
+        flex-shrink: 0;
+    }
+    .legend-symbol {
+        width: 12px;
+        height: 12px;
+        margin-right: 8px;
+        text-align: center;
+        font-weight: bold;
+        flex-shrink: 0;
+    }
+    .custom-legend-item input {
+        margin-right: 5px;
+    }
+    .custom-legend h6 {
+        margin-top: 0;
+        margin-bottom: 8px;
+        font-size: 14px;
+    }
+    .custom-popup {
+        position: absolute;
+        padding: 10px;
+        border: 1px solid #ccc;
+        background-color: white;
+        z-index: 1000;
+        max-width: 400px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        border-radius: 5px;
+    }
+    .popup-header {
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 5px;
+        margin-bottom: 10px;
+    }
+    .popup-title {
+        font-family: sans-serif;
+        font-size: 14px;
+        font-weight: bold;
+    }
+    .popup-close {
+        cursor:pointer;
+        font-size: 18px;
+    }
+    .popup-content {
+        font-family: sans-serif;
+        font-size: 12px;
+    }
+</style>
+
+</head>
+<body>
+    
+<div id="propositions-legend" class="custom-legend" style="left: 55%; width: 20%;"></div>
+<div id="funders-legend" class="custom-legend" style="left: 77%; width: 20%;"></div>
+
+    <div id="plotly-div" style="width:100%; height:90vh;"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // =========================================================================
+            // 1. DATA INITIALIZATION
+            // =========================================================================
+            // The Python script injects data objects here. These placeholders are replaced
+            // with actual JSON strings during the generation process.
+            const metadata = {METADATA_PLACEHOLDER};   // Contains team name and generation date.
+            const viewConfig = {CONFIG_PLACEHOLDER}; // Contains team-specific propositions and funders for default view.
+            const rawData = {DATA_PLACEHOLDER};      // The main dataset of all opportunities.
+            var myPlot = document.getElementById('plotly-div');
+
+            // =========================================================================
+            // 2. DATA PROCESSING AND SETUP
+            // =========================================================================
+            // Extract unique names for propositions and funders to build legends and maps.
+            const propNames = [...new Set(rawData.map(item => item.proposition_name))];
+            const funderNames = [...new Set(rawData.map(item => item.funder_name))];
+
+            // Define consistent color and symbol palettes. These will cycle if there are more items than colors/symbols.
+            const colors = ['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd', '#8c564b', '#e377c2', '#7f7f7f', '#bcbd22', '#17becf'];
+            const symbols = ['circle', 'square', 'diamond', 'cross', 'x', 'triangle-up', 'triangle-down', 'pentagon', 'hexagon', 'star'];
+            const symbol_entities = ['&bull;', '&#9632;', '&diams;', '&#43;', '&times;', '&#9650;', '&#9660;', '&#11040;', '&#11041;', '&#9733;']; // HTML entities for legends
+
+            // Create maps to ensure each proposition/funder has a consistent color/symbol throughout the plot and legends.
+            const propColorMap = new Map(propNames.map((name, i) => [name, colors[i % colors.length]]));
+            const funderSymbolMap = new Map(funderNames.map((name, i) => [name, symbols[i % symbols.length]]));
+            const funderSymbolEntityMap = new Map(funderNames.map((name, i) => [name, symbol_entities[i % symbol_entities.length]]));
+
+            // Assemble the initial data trace for Plotly.
+            var plotData = [{
+                x: rawData.map(d => d.x_urgency),
+                y: rawData.map(d => d.y_fit),
+                customdata: rawData.map(d => [d.text_notes, d.funder_name, d.proposition_name, d.fit_score, d.urgency_score]),
+                hovertext: rawData.map(d => `<b>${d.proposition_name}</b><br>Funder: ${d.funder_name}`),
+                hovertemplate: '%{hovertext}<extra></extra>', // Custom hover info
+                mode: 'markers',
+                marker: {
+                    color: rawData.map(d => propColorMap.get(d.proposition_name)),
+                    symbol: rawData.map(d => funderSymbolMap.get(d.funder_name)),
+                    size: 15
+                },
+                showlegend: false // We use our own custom HTML legends
+            }];
+
+            // =========================================================================
+            // 3. DYNAMIC TITLES AND LAYOUT
+            // =========================================================================
+            // Use the injected metadata to create dynamic, context-aware titles.
+            let pageTitle = 'Opportunity Landscape';
+            let graphTitle = 'Opportunity Landscape';
+            if (metadata.team_name) {
+                pageTitle = `${metadata.team_name} - Opportunity Landscape`;
+                graphTitle = `${metadata.team_name} Team View`;
+            }
+            graphTitle += `<br><span style='font-size: 12px;'>Generated: ${metadata.generation_date}</span>`;
+            document.title = pageTitle; // Set the browser tab title
+
+            // Define the overall layout for the Plotly chart.
+            var plotLayout = {
+                title: graphTitle,
+                xaxis: {
+                    title: 'Urgency',
+                    range: [0.5, 5.5],
+                    domain: [0, 0.50], // Constrain plot to the left 50%
+                    tickvals: [1, 2, 3, 4, 5],
+                    ticktext: ['Immediate', 'Soon', 'Later', 'Eventual', 'Distant']
+                },
+                yaxis: {
+                    title: 'Fit',
+                    range: [5.5, 0.5], // Reversed range to put "Perfect" (1) at the top
+                    tickvals: [1, 2, 3, 4, 5],
+                    ticktext: ['Perfect', 'Excellent', 'Good', 'Fair', 'Poor']
+                },
+                hovermode: 'closest',
+                autosize: true
+            };
+
+            // =========================================================================
+            // 4. LEGEND GENERATION
+            // =========================================================================
+            // Dynamically build the HTML for the proposition and funder legends.
+
+            // Proposition Legend
+            var prop_legend_html = '<h6>Propositions</h6><div class="custom-legend-item"><input type="checkbox" id="toggleAllProps" checked><label for="toggleAllProps"><b>All Propositions</b></label></div>';
+            propNames.forEach(name => {
+                // Check viewConfig to see if this checkbox should be checked by default.
+                const useDefault = !viewConfig.initial_propositions || viewConfig.initial_propositions.length === 0;
+                const isChecked = useDefault || viewConfig.initial_propositions.includes(name);
+                prop_legend_html += `
+                    <div class="custom-legend-item">
+                        <input type="checkbox" class="prop-checkbox" data-name="${name}" ${isChecked ? 'checked' : ''}>
+                        <div class="legend-color-box" style="background-color:${propColorMap.get(name)};"></div>
+                        <label>${name}</label>
+                    </div>`;
+            });
+            
+            // Funder Legend
+            var funder_legend_html = '<h6>Funders</h6><div class="custom-legend-item"><input type="checkbox" id="toggleAllFunders" checked><label for="toggleAllFunders"><b>All Funders</b></label></div>';
+            funderNames.forEach(name => {
+                // Check viewConfig to see if this checkbox should be checked by default.
+                const useDefault = !viewConfig.initial_funders || viewConfig.initial_funders.length === 0;
+                const isChecked = useDefault || viewConfig.initial_funders.includes(name);
+                funder_legend_html += `
+                    <div class="custom-legend-item">
+                        <input type="checkbox" class="funder-checkbox" data-name="${name}" ${isChecked ? 'checked' : ''}>
+                        <div class="legend-symbol">${funderSymbolEntityMap.get(name)}</div>
+                        <label>${name}</label>
+                    </div>`;
+            });
+
+            // =========================================================================
+            // 5. INTERACTIVITY AND EVENT HANDLING
+            // =========================================================================
+            
+            // Define updateToggleAllState function first
+            function updateToggleAllState(type) {
+                const checkboxes = document.querySelectorAll(`.${type.toLowerCase().slice(0, -1)}-checkbox`);
+                const allCheckbox = document.getElementById(`toggleAll${type}`);
+                const checkedCount = Array.from(checkboxes).filter(cb => cb.checked).length;
+
+                if (checkedCount === checkboxes.length) {
+                    allCheckbox.checked = true;
+                    allCheckbox.indeterminate = false;
+                } else if (checkedCount === 0) {
+                    allCheckbox.checked = false;
+                    allCheckbox.indeterminate = false;
+                } else {
+                    allCheckbox.checked = false;
+                    allCheckbox.indeterminate = true;
+                }
+            }
+
+            // Now define updatePlotVisibility function
+            function updatePlotVisibility() {
+                // Read the current checked state of every legend checkbox.
+                document.querySelectorAll('.prop-checkbox').forEach(cb => { propVisibility[cb.dataset.name] = cb.checked; });
+                document.querySelectorAll('.funder-checkbox').forEach(cb => { funderVisibility[cb.dataset.name] = cb.checked; });
+
+                // Filter the data to only include points where both the proposition and funder are checked.
+                const visibleData = rawData.filter(
+                    item => propVisibility[item.proposition_name] && funderVisibility[item.funder_name]
+                );
+
+                // If no data is visible, show a message and return early.
+                if (visibleData.length === 0) {
+                    Plotly.purge(myPlot);
+                    myPlot.innerHTML = '<div style="text-align: center; margin-top: 50px;">No data matches the current filter criteria.</div>';
+                    return;
+                }
+
+                // Create a new trace with only the visible data.
+                const newTrace = {
+                    x: visibleData.map(d => d.x_urgency),
+                    y: visibleData.map(d => d.y_fit),
+                    customdata: visibleData.map(d => [d.text_notes, d.funder_name, d.proposition_name, d.fit_score, d.urgency_score]),
+                    hovertext: visibleData.map(d => `<b>${d.proposition_name}</b><br>Funder: ${d.funder_name}`),
+                    hovertemplate: '%{hovertext}<extra></extra>',
+                    mode: 'markers',
+                    marker: {
+                        color: visibleData.map(d => propColorMap.get(d.proposition_name)),
+                        symbol: visibleData.map(d => funderSymbolMap.get(d.funder_name)),
+                        size: 15
+                    },
+                    showlegend: false
+                };
+
+                // Redraw the plot with the filtered data.
+                Plotly.newPlot(myPlot, [newTrace], plotLayout).then(function() {
+                    myPlot.on('plotly_click', showPopupOnClick); // Re-attach click handler
+                });
+
+                // Update the 'All' checkboxes to reflect the new state.
+                updateToggleAllState('Props');
+                updateToggleAllState('Funders');
+            }
+            
+            // Make updatePlotVisibility globally available
+            window.updatePlotVisibility = updatePlotVisibility;
+
+            /**
+             * Creates and displays a popup with details when a data point is clicked.
+             * @param {object} data - The Plotly click event data.
+             */
+            function showPopupOnClick(data) {
+                // Remove any existing popups.
+                const existingPopup = document.querySelector('.custom-popup');
+                if (existingPopup) {
+                    existingPopup.remove();
+                }
+
+                const point = data.points[0];
+                if (!point) return;
+
+                const notes = point.customdata[0];
+                const funder = point.customdata[1];
+                const proposition = point.customdata[2];
+                const fit_score = point.customdata[3];
+                const urgency_score = point.customdata[4];
+
+                const popup = document.createElement('div');
+                popup.className = 'custom-popup';
+
+                // Position the popup using the click event's screen coordinates.
+                const xPixel = data.event.pageX;
+                const yPixel = data.event.pageY;
+
+                popup.style.left = `${xPixel + 15}px`;
+                popup.style.top = `${yPixel + 15}px`; // Position slightly below the cursor
+
+                popup.innerHTML = `
+                    <div class="popup-header">
+                        <div class="popup-title">${proposition}</div>
+                        <div class="popup-close">&times;</div>
+                    </div>
+                    <div class="popup-content">
+                        <b>Funder:</b> ${funder}<br>
+                        <b>Fit:</b> ${fit_score} | <b>Urgency:</b> ${urgency_score}<br><br>
+                        <b>Notes:</b><br>${notes.replace(/\n/g, '<br>')}
+                    </div>
+                `;
+
+                document.body.appendChild(popup);
+
+                // Add a close button handler.
+                popup.querySelector('.popup-close').onclick = function() {
+                    popup.remove();
+                };
+            }
+            
+            // Initial drawing of the plot.
+            Plotly.newPlot(myPlot, plotData, plotLayout).then(function() {
+                // Attach the click handler for popups after the plot is drawn.
+                myPlot.on('plotly_click', showPopupOnClick);
+            });
+
+            // State objects to keep track of which items are currently visible.
+            var propVisibility = {};
+            var funderVisibility = {};
+
+            // This block runs once after the plot is initially drawn. It sets up the
+            // legends and all the event listeners that control the filtering logic.
+            // Initialize the checkboxer if we have team configuration
+            if (Object.keys(viewConfig).length > 0) {
+                // Only initialize Checkboxer if it hasn't been defined yet
+                if (typeof window.Checkboxer === 'undefined') {
+                    // Create a script element for the Checkboxer class
+                    const script = document.createElement('script');
+                    script.textContent = `
+                        // Only define Checkboxer if it doesn't exist
+                        if (typeof Checkboxer === 'undefined') {
+                            ${document.querySelector('script[data-checkboxer]').textContent}
+                        }
+                    `;
+                    document.head.appendChild(script);
+                }
+                
+                // Initialize the Checkboxer with the team configuration
+                const initScript = document.createElement('script');
+                initScript.textContent = `
+                    // Wait for DOM and Checkboxer to be available
+                    const checkCheckboxer = setInterval(() => {
+                        if (typeof Checkboxer !== 'undefined') {
+                            clearInterval(checkCheckboxer);
+                            new Checkboxer(${JSON.stringify(viewConfig)});
+                        }
+                    }, 100);
+                `;
+                document.head.appendChild(initScript);
+            }
+
+            myPlot.on('plotly_afterplot', function setupLegendsAndListeners() {
+                // Ensure this setup logic only runs once.
+                myPlot.removeListener('plotly_afterplot', setupLegendsAndListeners);
+
+                // --- Step 1: Inject the generated legend HTML into the DOM.
+                document.getElementById('propositions-legend').innerHTML = prop_legend_html;
+                document.getElementById('funders-legend').innerHTML = funder_legend_html;
+
+                // updateToggleAllState is now defined at the top of the INTERACTIVITY section
+
+                /**
+                 * This is the core function for filtering. It reads the current state of all
+                 * checkboxes, filters the original dataset, and redraws the plot with the
+                 * visible data points.
+                 */
+                function updatePlotVisibility() {
+                    // Read the current checked state of every legend checkbox.
+                    document.querySelectorAll('.prop-checkbox').forEach(cb => { propVisibility[cb.dataset.name] = cb.checked; });
+                    document.querySelectorAll('.funder-checkbox').forEach(cb => { funderVisibility[cb.dataset.name] = cb.checked; });
+
+                    // Build a new data trace containing only the points that should be visible.
+                    const visible_x = [];
+                    const visible_y = [];
+                    const visible_colors = [];
+                    const visible_symbols = [];
+                    const visible_customdata = [];
+                    const visible_hovertext = [];
+
+                    for (let i = 0; i < plotData[0].x.length; i++) {
+                        const propName = plotData[0].customdata[i][2];
+                        const funderName = plotData[0].customdata[i][1];
+                        if (propVisibility[propName] && funderVisibility[funderName]) {
+                            visible_x.push(plotData[0].x[i]);
+                            visible_y.push(plotData[0].y[i]);
+                            visible_colors.push(plotData[0].marker.color[i]);
+                            visible_symbols.push(plotData[0].marker.symbol[i]);
+                            visible_customdata.push(plotData[0].customdata[i]);
+                            visible_hovertext.push(plotData[0].hovertext[i]);
+                        }
+                    }
+
+                    // Create the new trace object for Plotly.
+                    const newTrace = {
+                        x: visible_x,
+                        y: visible_y,
+                        customdata: visible_customdata,
+                        hovertext: visible_hovertext,
+                        hovertemplate: '%{hovertext}<extra></extra>',
+                        mode: 'markers',
+                        marker: {
+                            color: visible_colors,
+                            symbol: visible_symbols,
+                            size: 15
+                        },
+                        showlegend: false
+                    };
+
+                    // Redraw the plot with the filtered data.
+                    Plotly.newPlot(myPlot, [newTrace], plotLayout).then(function() {
+                        myPlot.on('plotly_click', showPopupOnClick); // Re-attach click handler
+                    });
+
+                    // Update the 'All' checkboxes to reflect the new state.
+                    updateToggleAllState('Props');
+                    updateToggleAllState('Funders');
+                }
+
+                // --- Step 2: Attach event listeners to the 'All' toggles.
+                document.getElementById('toggleAllProps').addEventListener('change', function(e) {
+                    document.querySelectorAll('.prop-checkbox').forEach(cb => { cb.checked = e.target.checked; });
+                    updatePlotVisibility();
+                });
+                document.getElementById('toggleAllFunders').addEventListener('change', function(e) {
+                    document.querySelectorAll('.funder-checkbox').forEach(cb => { cb.checked = e.target.checked; });
+                    updatePlotVisibility();
+                });
+
+                // --- Step 3: Attach a single event listener to each individual checkbox.
+                document.querySelectorAll('.prop-checkbox, .funder-checkbox').forEach(cb => {
+                    cb.addEventListener('change', updatePlotVisibility);
+                });
+
+                // --- Step 4: Perform the initial plot update based on the default checkbox states.
+                updatePlotVisibility();
+            }); // closes myPlot.on('plotly_afterplot' ...
+        }); // closes document.addEventListener...
+    </script>
+    
+    <!-- Checkboxer script (will be injected into the page) -->
+    <script data-checkboxer>
+        // The checkboxer script will be injected here
+    </script>
+</body>
+</html>

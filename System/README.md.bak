@@ -1,0 +1,78 @@
+# works_do_not_modify Directory: System Overview & Handoff Guide
+
+This directory contains the **portable, production-ready pipeline** for extracting, transforming, and visualizing Airtable data as an interactive HTML dashboard. It is designed for both human maintainers and AI collaborators, following SD4D and "one right way" principles for robust, auditable, and easily handoff-able workflows.
+
+---
+
+## Directory Structure
+
+```
+works_do_not_modify/
+├── .env                # Environment variables for Airtable API access (copy or symlink, do not commit)
+├── one_right_way.md    # Development & handoff philosophy
+├── templates/          # Shared HTML templates (e.g., visualization_template.html)
+├── outputs/            # (Optional) Shared outputs for other workflows
+├── match_repair/       # (Optional) Utilities for data repair
+├── visualization/      # The complete, portable visualization pipeline kit (see below)
+```
+
+---
+
+## The Visualization Kit (`visualization/`)
+
+This subfolder is a **self-contained pipeline** for Airtable-to-HTML visualization. It includes:
+- All scripts (fetch, transform, generate, orchestrate)
+- Mapping utilities and mapping file generation
+- All required templates and assets
+- Local `.env` file for credentials
+
+### Typical Workflow
+1. Ensure `.env` is present with valid Airtable credentials.
+2. Run:
+   ```
+   python FreshVisualization.py
+   ```
+   - This regenerates the mapping, fetches data, transforms it, and produces an interactive HTML dashboard.
+   - The output HTML is opened in your browser by default.
+   - Use `--no-browser` to suppress browser launch.
+
+### Key Files in `visualization/`
+- `FreshVisualization.py` — Orchestrates the full pipeline, robust to errors, AI/human handoff ready.
+- `fetch_match_data.py`, `transform_to_visualization_schema.py`, `generate_visualization.py` — Pipeline steps.
+- `create_mapping_dict.py` — Regenerates `airtable_mapping.json` for robust ID-to-name mapping.
+- `airtable_id_name_utils.py` — Utility for mapping IDs to names.
+- `templates/visualization_template.html`, `checkboxer.js` — Required assets.
+
+---
+
+## Guidance for Human Maintainers
+- **Never edit scripts directly in this folder unless you intend to update the canonical pipeline.**
+- Always regenerate the mapping (`airtable_mapping.json`) before running the pipeline for fresh data.
+- Keep the `.env` file up to date and secure.
+- Use `FreshVisualization.py` for end-to-end runs; individual scripts can be run for debugging.
+- For development philosophy, see `one_right_way.md`.
+- If you migrate, archive, or hand off this kit, ensure all files in `visualization/` are included.
+
+---
+
+## Guidance for AI Collaborators
+- **Assume this directory is the single source of truth for the visualization pipeline.**
+- Always use relative paths for all file operations.
+- Maintain explicit docstrings and keep all assumptions in code and documentation.
+- When extending or modifying the pipeline, update this README and `one_right_way.md` with rationale and workflow changes.
+- Validate all dependencies are present before orchestrating the pipeline.
+- If asked to migrate, zip, or clone the kit, ensure all subfolders and assets are included for full portability.
+- For any ambiguity, consult or prompt the user for confirmation (see SD4D/consultative principle).
+
+---
+
+## For Both Human & AI
+- This folder is the **handoff boundary** between canonical/experimental development and production/archival use.
+- All code and documentation here are intended for seamless transfer between human and AI maintainers.
+- For any changes, document your reasoning and update this README accordingly.
+
+---
+
+**Questions or improvements?**
+- See `one_right_way.md` for philosophy and escalation paths.
+- Or, consult the current maintainer or AI assistant.

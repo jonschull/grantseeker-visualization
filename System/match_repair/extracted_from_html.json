@@ -1,0 +1,682 @@
+[
+  {
+    "funder_name": "Bezos AI For Climate Grand Challenge",
+    "proposition_name": "AI Oracle of EcoRestoration",
+    "y_fit": 3.9687710618846177,
+    "x_urgency": 3.8594437695987316,
+    "size_arduousness": 3,
+    "text_notes": "Fit=4: While both the funder and proposition involve \"AI\" and \"climate,\" the funder is a highly specific, prize-style competition that is already closed to new entrants. The proposition, \"AI Oracle of EcoRestoration,\" appears to be a general concept, not a tailored submission to this specific, phased challenge. The alignment is superficial and the structures are incompatible. | Urgency=4: The funder notes clearly state that Phase I is closed. There is no current path to engagement. This requires monitoring for future, unrelated opportunities. | Strength=1: An explicit link exists in Airtable.<br><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblyu00PsUrnWZdnN/viw93d46F5dPFqXxA/recPPTL3F456nhESB?blocks=hide' target='_blank'>Open Funder Record</a><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblo9ANCn8pSVfWeJ/viwPphvyFXVvIAq4O/rec2d1T1tkMFIwKCi?blocks=hide' target='_blank'>Open Proposition Record</a>",
+    "fit_score": 4,
+    "urgency_score": 4
+  },
+  {
+    "funder_name": "Draper Richards Kaplan Foundation",
+    "proposition_name": "AI Oracle of EcoRestoration",
+    "y_fit": 0.9641726824438782,
+    "x_urgency": 1.1288095535359517,
+    "size_arduousness": 3,
+    "text_notes": "Fit=1: Excellent alignment. DRK is a venture philanthropy fund targeting early-stage social enterprises in our exact domain (environment) and geography (Africa). The focus on scalable models is a perfect match for an AI-driven tool. | Urgency=1: Clear and immediate path. The application process is open and year-round. | Strength=1: An explicit link exists in Airtable.<br><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblyu00PsUrnWZdnN/viw93d46F5dPFqXxA/recaddN81jGJkNeuF?blocks=hide' target='_blank'>Open Funder Record</a><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblo9ANCn8pSVfWeJ/viwPphvyFXVvIAq4O/rec2d1T1tkMFIwKCi?blocks=hide' target='_blank'>Open Proposition Record</a>",
+    "fit_score": 1,
+    "urgency_score": 1
+  },
+  {
+    "funder_name": "Founders Pledge",
+    "proposition_name": "AI Oracle of EcoRestoration",
+    "y_fit": 2.863025595947217,
+    "x_urgency": 5.004245996937759,
+    "size_arduousness": 3,
+    "text_notes": "Fit=3: Thematic overlap via their Climate Fund, but their proactive, research-driven model that does not accept unsolicited proposals is a significant barrier. | Urgency=5: No actionable path. They do not accept unsolicited proposals. | Strength=1: An explicit link exists in Airtable.<br><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblyu00PsUrnWZdnN/viw93d46F5dPFqXxA/recLlDl9evlMrcuNS?blocks=hide' target='_blank'>Open Funder Record</a><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblo9ANCn8pSVfWeJ/viwPphvyFXVvIAq4O/rec2d1T1tkMFIwKCi?blocks=hide' target='_blank'>Open Proposition Record</a>",
+    "fit_score": 3,
+    "urgency_score": 5
+  },
+  {
+    "funder_name": "Global Innovation Fund Grant Program",
+    "proposition_name": "AI Oracle of EcoRestoration",
+    "y_fit": 3.1318120723287803,
+    "x_urgency": 2.986974259102528,
+    "size_arduousness": 3,
+    "text_notes": "Fit=3: Potential but indirect fit. The core mission is poverty alleviation, so the proposition must be carefully framed to highlight its impact on extreme poverty. | Urgency=3: Active program. Applications are accepted on a rolling basis. | Strength=1: An explicit link exists in Airtable.<br><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblyu00PsUrnWZdnN/viw93d46F5dPFqXxA/recQU6tchYQGv6Vuq?blocks=hide' target='_blank'>Open Funder Record</a><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblo9ANCn8pSVfWeJ/viwPphvyFXVvIAq4O/rec2d1T1tkMFIwKCi?blocks=hide' target='_blank'>Open Proposition Record</a>",
+    "fit_score": 3,
+    "urgency_score": 3
+  },
+  {
+    "funder_name": "Science for Nature and People Partnership (SNAPP)",
+    "proposition_name": "AI Oracle of EcoRestoration",
+    "y_fit": 2.120970347918039,
+    "x_urgency": 3.952351119509457,
+    "size_arduousness": 3,
+    "text_notes": "Fit=2: Excellent conceptual alignment. SNAPPs model of funding expert working groups is a perfect fit for the proposition, which can be framed as a science-based research question. | Urgency=4: Monitoring required. The next call for proposals is not until Sep-Dec 2025. | Strength=1: An explicit link exists in Airtable.<br><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblyu00PsUrnWZdnN/viw93d46F5dPFqXxA/recQrTZW3K5uDfNyp?blocks=hide' target='_blank'>Open Funder Record</a><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblo9ANCn8pSVfWeJ/viwPphvyFXVvIAq4O/rec2d1T1tkMFIwKCi?blocks=hide' target='_blank'>Open Proposition Record</a>",
+    "fit_score": 2,
+    "urgency_score": 4
+  },
+  {
+    "funder_name": "Global Innovation Fund Grant Program",
+    "proposition_name": "Experimental Proposal: Bioaerosol Influence on Conversion and Capture of Atmospheric Moisture",
+    "y_fit": 2.11818987124399,
+    "x_urgency": 3.0301181153901644,
+    "size_arduousness": 3,
+    "text_notes": "Fit=2: Stronger fit. This scientific proposal has a more direct link to improving agricultural outcomes and water security for the poor, aligning with the funders focus on innovations and research. The poverty connection must still be the central theme. | Urgency=3: Active program with rolling applications. | Strength=1: An explicit link exists in Airtable.<br><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblyu00PsUrnWZdnN/viw93d46F5dPFqXxA/recQU6tchYQGv6Vuq?blocks=hide' target='_blank'>Open Funder Record</a><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblo9ANCn8pSVfWeJ/viwPphvyFXVvIAq4O/rec4PYFqISYqpZLdN?blocks=hide' target='_blank'>Open Proposition Record</a>",
+    "fit_score": 2,
+    "urgency_score": 3
+  },
+  {
+    "funder_name": "Science for Nature and People Partnership (SNAPP)",
+    "proposition_name": "Experimental Proposal: Bioaerosol Influence on Conversion and Capture of Atmospheric Moisture",
+    "y_fit": 0.8895935369163734,
+    "x_urgency": 3.9161505606485902,
+    "size_arduousness": 3,
+    "text_notes": "Fit=1: Perfect alignment. SNAPP funds expert working groups to solve science-based conservation problems, which is an exact match for this experimental proposition. | Urgency=4: Monitoring required. Next call for proposals is Sep-Dec 2025. | Strength=1: An explicit link exists in Airtable.<br><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblyu00PsUrnWZdnN/viw93d46F5dPFqXxA/recQrTZW3K5uDfNyp?blocks=hide' target='_blank'>Open Funder Record</a><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblo9ANCn8pSVfWeJ/viwPphvyFXVvIAq4O/rec4PYFqISYqpZLdN?blocks=hide' target='_blank'>Open Proposition Record</a>",
+    "fit_score": 1,
+    "urgency_score": 4
+  },
+  {
+    "funder_name": "Bezos Earth Fund",
+    "proposition_name": "Panama Restoration Lab",
+    "y_fit": 4.055965151811434,
+    "x_urgency": 5.121996841204863,
+    "size_arduousness": 3,
+    "text_notes": "Fit=4: Poor fit. The funder does not accept unsolicited proposals, making their process incompatible with a direct application approach. | Urgency=5: No actionable path. | Strength=1: An explicit link exists in Airtable.<br><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblyu00PsUrnWZdnN/viw93d46F5dPFqXxA/recISI0lEejYKEPK1?blocks=hide' target='_blank'>Open Funder Record</a><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblo9ANCn8pSVfWeJ/viwPphvyFXVvIAq4O/rec62E9tEGDRbE90c?blocks=hide' target='_blank'>Open Proposition Record</a>",
+    "fit_score": 4,
+    "urgency_score": 5
+  },
+  {
+    "funder_name": "Nature 4 Water",
+    "proposition_name": "Panama Restoration Lab",
+    "y_fit": 1.0584715898835129,
+    "x_urgency": 3.895109200125824,
+    "size_arduousness": 3,
+    "text_notes": "Fit=1: Excellent fit. The proposition aligns perfectly with the funders focus on providing technical assistance for Nature-based Solutions. | Urgency=4: Monitoring required. The deadline for the most recent funding cycle has passed; this is a high-priority opportunity to track for the next cycle in late 2025/early 2026. | Strength=1: An explicit link exists in Airtable.<br><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblyu00PsUrnWZdnN/viw93d46F5dPFqXxA/reckm1bySlGo9MadL?blocks=hide' target='_blank'>Open Funder Record</a><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblo9ANCn8pSVfWeJ/viwPphvyFXVvIAq4O/rec62E9tEGDRbE90c?blocks=hide' target='_blank'>Open Proposition Record</a>",
+    "fit_score": 1,
+    "urgency_score": 4
+  },
+  {
+    "funder_name": "Inter-American Foundation (IAF)",
+    "proposition_name": "Panama Restoration Lab",
+    "y_fit": 1.1240601967070643,
+    "x_urgency": 3.044761448546681,
+    "size_arduousness": 3,
+    "text_notes": "Fit=1: Excellent geographic and thematic fit. The IAF funds community-led development in Latin America, and the Panama Restoration Lab is in the correct region. The proposal must emphasize its community-led nature. | Urgency=3: Application process and deadlines are not specified; assuming an active program with moderate urgency. | Strength=1: An explicit link exists in Airtable.<br><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblyu00PsUrnWZdnN/viw93d46F5dPFqXxA/recfKR4HUflXGgtBs?blocks=hide' target='_blank'>Open Funder Record</a><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblo9ANCn8pSVfWeJ/viwPphvyFXVvIAq4O/rec62E9tEGDRbE90c?blocks=hide' target='_blank'>Open Proposition Record</a>",
+    "fit_score": 1,
+    "urgency_score": 3
+  },
+  {
+    "funder_name": "Mitsubishi Foundation for the Americas",
+    "proposition_name": "Panama Restoration Lab",
+    "y_fit": 1.0857002511054386,
+    "x_urgency": 2.1065343357818884,
+    "size_arduousness": 3,
+    "text_notes": "Fit=1: Excellent fit. The foundations focus on biodiversity conservation and sustainable development in the Americas is a direct match for the Panama Restoration Lab. | Urgency=2: High priority. Ideal submission window is Q1; action should be taken to prepare for the next cycle. | Strength=1: An explicit link exists in Airtable.<br><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblyu00PsUrnWZdnN/viw93d46F5dPFqXxA/recgMu28B4pBio87B?blocks=hide' target='_blank'>Open Funder Record</a><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblo9ANCn8pSVfWeJ/viwPphvyFXVvIAq4O/rec62E9tEGDRbE90c?blocks=hide' target='_blank'>Open Proposition Record</a>",
+    "fit_score": 1,
+    "urgency_score": 2
+  },
+  {
+    "funder_name": "Global EbA Fund",
+    "proposition_name": "Panama Restoration Lab",
+    "y_fit": 1.0004791097910015,
+    "x_urgency": 4.1125243179018875,
+    "size_arduousness": 3,
+    "text_notes": "Fit=1: Excellent fit. The funders focus on Ecosystem-based Adaptation (EbA) is a perfect match for a restoration lab project. | Urgency=4: Monitoring required. The 7th call for proposals has closed; need to monitor for the next cycle. | Strength=1: An explicit link exists in Airtable.<br><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblyu00PsUrnWZdnN/viw93d46F5dPFqXxA/recNWDjqHXoSb0Qlm?blocks=hide' target='_blank'>Open Funder Record</a><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblo9ANCn8pSVfWeJ/viwPphvyFXVvIAq4O/rec62E9tEGDRbE90c?blocks=hide' target='_blank'>Open Proposition Record</a>",
+    "fit_score": 1,
+    "urgency_score": 4
+  },
+  {
+    "funder_name": "The Livelihoods Carbon Funds (LCF)",
+    "proposition_name": "Panama Restoration Lab",
+    "y_fit": 2.063699767122962,
+    "x_urgency": 2.900098834617623,
+    "size_arduousness": 3,
+    "text_notes": "Fit=2: Strong potential but requires adapting the project to a carbon credit financing model. This is an impact investment fund, not a grant-maker. | Urgency=3: Open opportunity, but requires significant strategic work before engagement. | Strength=1: An explicit link exists in Airtable.<br><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblyu00PsUrnWZdnN/viw93d46F5dPFqXxA/recNqzM7fxTBo35uv?blocks=hide' target='_blank'>Open Funder Record</a><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblo9ANCn8pSVfWeJ/viwPphvyFXVvIAq4O/rec62E9tEGDRbE90c?blocks=hide' target='_blank'>Open Proposition Record</a>",
+    "fit_score": 2,
+    "urgency_score": 3
+  },
+  {
+    "funder_name": "The Climate Restoration Fund",
+    "proposition_name": "Panama Restoration Lab",
+    "y_fit": 1.0161461963101348,
+    "x_urgency": 3.9446868125277432,
+    "size_arduousness": 3,
+    "text_notes": "Fit=1: Perfect alignment. The funders mission is to provide seed funding for restoration projects, which is an exact match for this proposition. | Urgency=4: Monitoring required. The funders website explicitly states they are not yet accepting applications. | Strength=1: An explicit link exists in Airtable.<br><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblyu00PsUrnWZdnN/viw93d46F5dPFqXxA/recbCljkLjbvHmgz1?blocks=hide' target='_blank'>Open Funder Record</a><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblo9ANCn8pSVfWeJ/viwPphvyFXVvIAq4O/rec62E9tEGDRbE90c?blocks=hide' target='_blank'>Open Proposition Record</a>",
+    "fit_score": 1,
+    "urgency_score": 4
+  },
+  {
+    "funder_name": "The Arkbound Foundation -- Climate Emergency Fund",
+    "proposition_name": "Panama Restoration Lab",
+    "y_fit": 1.0162089271204502,
+    "x_urgency": 0.9054816776972459,
+    "size_arduousness": 3,
+    "text_notes": "Fit=1: Excellent fit. The funders Climate Emergency Fund is a perfect thematic match. | Urgency=1: High urgency. Applications are accepted on a rolling basis, making this a direct and immediate opportunity. | Strength=1: An explicit link exists in Airtable.<br><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblyu00PsUrnWZdnN/viw93d46F5dPFqXxA/recqjh8ijBkGEC8wM?blocks=hide' target='_blank'>Open Funder Record</a><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblo9ANCn8pSVfWeJ/viwPphvyFXVvIAq4O/rec62E9tEGDRbE90c?blocks=hide' target='_blank'>Open Proposition Record</a>",
+    "fit_score": 1,
+    "urgency_score": 1
+  },
+  {
+    "funder_name": "REDAA (Reversing Environmental Degradation in Africa and Asia)",
+    "proposition_name": "Panama Restoration Lab",
+    "y_fit": 4.948322294412661,
+    "x_urgency": 5.062705523929452,
+    "size_arduousness": 3,
+    "text_notes": "Fit=5: No fit. The funder exclusively supports projects in Sub-Saharan Africa and South/SE Asia. The Panama Restoration Lab is geographically ineligible. | Urgency=5: No actionable path. | Strength=1: An explicit link exists in Airtable, but it is an error.<br><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblyu00PsUrnWZdnN/viw93d46F5dPFqXxA/reczeJPxvR84LYmmn?blocks=hide' target='_blank'>Open Funder Record</a><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblo9ANCn8pSVfWeJ/viwPphvyFXVvIAq4O/rec62E9tEGDRbE90c?blocks=hide' target='_blank'>Open Proposition Record</a>",
+    "fit_score": 5,
+    "urgency_score": 5
+  },
+  {
+    "funder_name": "The IKEA Foundation",
+    "proposition_name": "Refugee Program for Microloans and Regenerative Agriculture",
+    "y_fit": 3.9360236720596897,
+    "x_urgency": 4.896893337095689,
+    "size_arduousness": 1,
+    "text_notes": "Fit=4: Excellent thematic and geographic alignment, but the process is a complete mismatch. The IKEA Foundation does not accept unsolicited proposals and works by invitation only. | Urgency=5: No actionable path for direct application. | Strength=1: An explicit link exists in Airtable.<br><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblyu00PsUrnWZdnN/viw93d46F5dPFqXxA/recuFn9Ubjw8D8YCj?blocks=hide' target='_blank'>Open Funder Record</a><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblo9ANCn8pSVfWeJ/viwPphvyFXVvIAq4O/rec6ns2SYd7pIDWXp?blocks=hide' target='_blank'>Open Proposition Record</a>",
+    "fit_score": 4,
+    "urgency_score": 5
+  },
+  {
+    "funder_name": "Ecosystem Restoration Communities (ERC)",
+    "proposition_name": "Refugee Program for Microloans and Regenerative Agriculture",
+    "y_fit": 5.093612281418436,
+    "x_urgency": 4.911291108294617,
+    "size_arduousness": 3,
+    "text_notes": "Fit=5: No fit. This is a global network, not a grant-making foundation. Not a direct funding opportunity. | Urgency=5: No actionable path. | Strength=1: An explicit link exists in Airtable, but it is a misunderstanding.<br><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblyu00PsUrnWZdnN/viw93d46F5dPFqXxA/recECiO3sCX2FOit1?blocks=hide' target='_blank'>Open Funder Record</a><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblo9ANCn8pSVfWeJ/viwPphvyFXVvIAq4O/rec6ns2SYd7pIDWXp?blocks=hide' target='_blank'>Open Proposition Record</a>",
+    "fit_score": 5,
+    "urgency_score": 5
+  },
+  {
+    "funder_name": "Global EbA Fund",
+    "proposition_name": "Refugee Program for Microloans and Regenerative Agriculture",
+    "y_fit": 0.878063142822765,
+    "x_urgency": 3.9344735113594225,
+    "size_arduousness": 3,
+    "text_notes": "Fit=1: Excellent fit. Regenerative agriculture is a core EbA strategy, and applying it to a refugee community provides strong social co-benefits. | Urgency=4: Monitoring required. The 7th call for proposals has closed; need to monitor for the next cycle. | Strength=1: An explicit link exists in Airtable.<br><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblyu00PsUrnWZdnN/viw93d46F5dPFqXxA/recNWDjqHXoSb0Qlm?blocks=hide' target='_blank'>Open Funder Record</a><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblo9ANCn8pSVfWeJ/viwPphvyFXVvIAq4O/rec6ns2SYd7pIDWXp?blocks=hide' target='_blank'>Open Proposition Record</a>",
+    "fit_score": 1,
+    "urgency_score": 4
+  },
+  {
+    "funder_name": "African Climate Foundation",
+    "proposition_name": "Refugee Program for Microloans and Regenerative Agriculture",
+    "y_fit": 3.855218575744299,
+    "x_urgency": 4.92177815040788,
+    "size_arduousness": 3,
+    "text_notes": "Fit=4: Poor fit. The ACF is a strategic foundation focused on high-level policy, advocacy, and research, not direct funding of on-the-ground projects. | Urgency=5: No actionable path for this type of project. | Strength=1: An explicit link exists in Airtable but is based on a misunderstanding of the funders model.<br><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblyu00PsUrnWZdnN/viw93d46F5dPFqXxA/recJhFvW5M8A6Pfzw?blocks=hide' target='_blank'>Open Funder Record</a><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblo9ANCn8pSVfWeJ/viwPphvyFXVvIAq4O/rec6ns2SYd7pIDWXp?blocks=hide' target='_blank'>Open Proposition Record</a>",
+    "fit_score": 4,
+    "urgency_score": 5
+  },
+  {
+    "funder_name": "European Climate Foundation (ECF)",
+    "proposition_name": "Refugee Program for Microloans and Regenerative Agriculture",
+    "y_fit": 4.081433737551541,
+    "x_urgency": 4.9301210921159,
+    "size_arduousness": 3,
+    "text_notes": "Fit=4: Poor fit. The ECF is a strategic foundation focused on high-level policy and does not fund on-the-ground projects. | Urgency=5: No actionable path; they do not accept unsolicited proposals. | Strength=1: An explicit link exists in Airtable but is based on a misunderstanding of the funders model.<br><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblyu00PsUrnWZdnN/viw93d46F5dPFqXxA/recUzcnjnZjVU0fN0?blocks=hide' target='_blank'>Open Funder Record</a><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblo9ANCn8pSVfWeJ/viwPphvyFXVvIAq4O/rec6ns2SYd7pIDWXp?blocks=hide' target='_blank'>Open Proposition Record</a>",
+    "fit_score": 4,
+    "urgency_score": 5
+  },
+  {
+    "funder_name": "Global Innovation Fund Grant Program",
+    "proposition_name": "Refugee Program for Microloans and Regenerative Agriculture",
+    "y_fit": 1.010761595373373,
+    "x_urgency": 0.9521999873238641,
+    "size_arduousness": 3,
+    "text_notes": "Fit=1: Excellent fit. The funder supports innovations for people in extreme poverty, aligning perfectly with a refugee microloan and regenerative agriculture program. Their focus on women is a direct hit. | Urgency=1: High urgency. Applications are accepted on a rolling basis. | Strength=1: An explicit link exists in Airtable.<br><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblyu00PsUrnWZdnN/viw93d46F5dPFqXxA/recQU6tchYQGv6Vuq?blocks=hide' target='_blank'>Open Funder Record</a><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblo9ANCn8pSVfWeJ/viwPphvyFXVvIAq4O/rec6ns2SYd7pIDWXp?blocks=hide' target='_blank'>Open Proposition Record</a>",
+    "fit_score": 1,
+    "urgency_score": 1
+  },
+  {
+    "funder_name": "Mitsubishi Corporation Fund for Europe and Africa",
+    "proposition_name": "Refugee Program for Microloans and Regenerative Agriculture",
+    "y_fit": 1.9879922303545476,
+    "x_urgency": 3.8638721161782676,
+    "size_arduousness": 3,
+    "text_notes": "Fit=2: Strong thematic and geographic alignment. However, their partnership-only model makes a direct application impossible; success depends on connecting with an existing NGO partner. | Urgency=4: No direct application path. Requires a long-term strategy of identifying and engaging their current partners. | Strength=1: An explicit link exists in Airtable.<br><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblyu00PsUrnWZdnN/viw93d46F5dPFqXxA/reczBDJ9Ji4AQpcVl?blocks=hide' target='_blank'>Open Funder Record</a><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblo9ANCn8pSVfWeJ/viwPphvyFXVvIAq4O/rec6ns2SYd7pIDWXp?blocks=hide' target='_blank'>Open Proposition Record</a>",
+    "fit_score": 2,
+    "urgency_score": 4
+  },
+  {
+    "funder_name": "The Adaptation Fund",
+    "proposition_name": "Refugee Program for Microloans and Regenerative Agriculture",
+    "y_fit": 1.9226698469263914,
+    "x_urgency": 3.974103669173332,
+    "size_arduousness": 3,
+    "text_notes": "Fit=2: Excellent thematic fit, but the application process is a major hurdle, requiring submission through an accredited Multilateral Implementing Entity (MIE). | Urgency=4: No direct path. Requires a long-term strategy to build a relationship with an MIE partner. | Strength=1: An explicit link exists in Airtable.<br><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblyu00PsUrnWZdnN/viw93d46F5dPFqXxA/rec63KKlobEwomHOQ?blocks=hide' target='_blank'>Open Funder Record</a><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblo9ANCn8pSVfWeJ/viwPphvyFXVvIAq4O/rec6ns2SYd7pIDWXp?blocks=hide' target='_blank'>Open Proposition Record</a>",
+    "fit_score": 2,
+    "urgency_score": 4
+  },
+  {
+    "funder_name": "Open Society Foundations",
+    "proposition_name": "Refugee Program for Microloans and Regenerative Agriculture",
+    "y_fit": 3.929527441507622,
+    "x_urgency": 5.119704687910785,
+    "size_arduousness": 1,
+    "text_notes": "Fit=4: Poor fit. The funders core focus is on democracy and human rights, not economic empowerment or agriculture. The invitation-only policy is a major barrier. | Urgency=5: No actionable path. Funding is by invitation only. | Strength=1: An explicit link exists in Airtable.<br><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblyu00PsUrnWZdnN/viw93d46F5dPFqXxA/recxhMX3sInu821kb?blocks=hide' target='_blank'>Open Funder Record</a><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblo9ANCn8pSVfWeJ/viwPphvyFXVvIAq4O/rec6ns2SYd7pIDWXp?blocks=hide' target='_blank'>Open Proposition Record</a>",
+    "fit_score": 4,
+    "urgency_score": 5
+  },
+  {
+    "funder_name": "The Arkbound Foundation -- Climate Emergency Fund",
+    "proposition_name": "Refugee Program for Microloans and Regenerative Agriculture",
+    "y_fit": 0.9289650350344092,
+    "x_urgency": 1.0264758939872949,
+    "size_arduousness": 3,
+    "text_notes": "Fit=1: Excellent fit. The Climate Emergency Fund is a perfect thematic match for a regenerative agriculture project with a strong social co-benefit. | Urgency=1: High urgency. Applications are accepted on a rolling basis. | Strength=1: An explicit link exists in Airtable.<br><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblyu00PsUrnWZdnN/viw93d46F5dPFqXxA/recqjh8ijBkGEC8wM?blocks=hide' target='_blank'>Open Funder Record</a><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblo9ANCn8pSVfWeJ/viwPphvyFXVvIAq4O/rec6ns2SYd7pIDWXp?blocks=hide' target='_blank'>Open Proposition Record</a>",
+    "fit_score": 1,
+    "urgency_score": 1
+  },
+  {
+    "funder_name": "Addax & Oryx Foundation",
+    "proposition_name": "Refugee Program for Microloans and Regenerative Agriculture",
+    "y_fit": 0.9873523167554772,
+    "x_urgency": 0.8635867921728997,
+    "size_arduousness": 3,
+    "text_notes": "Fit=1: Perfect alignment. The foundations explicit focus on eradicating poverty in Uganda via sustainable development is an exact match for the proposition. | Urgency=1: High urgency. The open and clear application process makes this an immediate opportunity. | Strength=1: An explicit link exists in Airtable.<br><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblyu00PsUrnWZdnN/viw93d46F5dPFqXxA/rec2X39fhq16M7DQn?blocks=hide' target='_blank'>Open Funder Record</a><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblo9ANCn8pSVfWeJ/viwPphvyFXVvIAq4O/rec6ns2SYd7pIDWXp?blocks=hide' target='_blank'>Open Proposition Record</a>",
+    "fit_score": 1,
+    "urgency_score": 1
+  },
+  {
+    "funder_name": "Gupta Family Foundation Grant",
+    "proposition_name": "Refugee Program for Microloans and Regenerative Agriculture",
+    "y_fit": 1.1098017416759904,
+    "x_urgency": 2.0308488406141176,
+    "size_arduousness": 3,
+    "text_notes": "Fit=1: Excellent fit. The funders mission to support smaller, founder-led organizations working towards self-reliance is a perfect match. | Urgency=2: High urgency, but time-gated. The application window opens after July 15th and is limited to the first 50 applicants. Requires immediate preparation. | Strength=1: An explicit link exists in Airtable.<br><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblyu00PsUrnWZdnN/viw93d46F5dPFqXxA/recNCfO5KXCbnb3nT?blocks=hide' target='_blank'>Open Funder Record</a><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblo9ANCn8pSVfWeJ/viwPphvyFXVvIAq4O/rec6ns2SYd7pIDWXp?blocks=hide' target='_blank'>Open Proposition Record</a>",
+    "fit_score": 1,
+    "urgency_score": 2
+  },
+  {
+    "funder_name": "The Agroecology Fund",
+    "proposition_name": "Refugee Program for Microloans and Regenerative Agriculture",
+    "y_fit": 0.9570319816213031,
+    "x_urgency": 2.1488349909678854,
+    "size_arduousness": 3,
+    "text_notes": "Fit=1: Perfect alignment. The funder supports grassroots agroecology, and their partnership with the Alliance for Food Sovereignty in Africa (AFSA) provides a clear strategic entry point. | Urgency=2: High urgency. The immediate next step is to investigate the application process through their partner, AFSA. | Strength=1: An explicit link exists in Airtable.<br><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblyu00PsUrnWZdnN/viw93d46F5dPFqXxA/rec8K1xHa1bZmdCsX?blocks=hide' target='_blank'>Open Funder Record</a><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblo9ANCn8pSVfWeJ/viwPphvyFXVvIAq4O/rec6ns2SYd7pIDWXp?blocks=hide' target='_blank'>Open Proposition Record</a>",
+    "fit_score": 1,
+    "urgency_score": 2
+  },
+  {
+    "funder_name": "CS Fund & Warsh-Mott Legacy Grant",
+    "proposition_name": "Refugee Program for Microloans and Regenerative Agriculture",
+    "y_fit": 0.9264466872473065,
+    "x_urgency": 1.8981016711103118,
+    "size_arduousness": 3,
+    "text_notes": "Fit=1: Perfect alignment. The funders mission to support a just transition to regenerative economies and food systems is an exact match. | Urgency=2: High urgency. The explicit next step is to draft a comprehensive inquiry. | Strength=1: An explicit link exists in Airtable.<br><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblyu00PsUrnWZdnN/viw93d46F5dPFqXxA/rec57irxCLfbzzOhg?blocks=hide' target='_blank'>Open Funder Record</a><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblo9ANCn8pSVfWeJ/viwPphvyFXVvIAq4O/rec6ns2SYd7pIDWXp?blocks=hide' target='_blank'>Open Proposition Record</a>",
+    "fit_score": 1,
+    "urgency_score": 2
+  },
+  {
+    "funder_name": "Small Foundation",
+    "proposition_name": "Refugee Program for Microloans and Regenerative Agriculture",
+    "y_fit": 0.9648250518260295,
+    "x_urgency": 1.9475213135083893,
+    "size_arduousness": 3,
+    "text_notes": "Fit=1: Perfect alignment. The funders mission to catalyze income-generating opportunities for the MSME ecosystem in rural sub-Saharan Africa is an exact match. | Urgency=2: High urgency. The immediate next step is to investigate their application process. | Strength=1: An explicit link exists in Airtable.<br><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblyu00PsUrnWZdnN/viw93d46F5dPFqXxA/rechE4lIGRFOuNxkU?blocks=hide' target='_blank'>Open Funder Record</a><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblo9ANCn8pSVfWeJ/viwPphvyFXVvIAq4O/rec6ns2SYd7pIDWXp?blocks=hide' target='_blank'>Open Proposition Record</a>",
+    "fit_score": 1,
+    "urgency_score": 2
+  },
+  {
+    "funder_name": "The Nature Conservancy",
+    "proposition_name": "Refugee Program for Microloans and Regenerative Agriculture",
+    "y_fit": 1.8644401585913737,
+    "x_urgency": 3.8908878528140614,
+    "size_arduousness": 1,
+    "text_notes": "Fit=2: Strong fit. TNCs Africa Program and focus on community-led conservation align well with the proposition. | Urgency=4: Relationship building required. The path to funding will require identifying the correct contacts within their Africa Program and building a strategic partnership. | Strength=1: An explicit link exists in Airtable.<br><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblyu00PsUrnWZdnN/viw93d46F5dPFqXxA/recU735K8mkxXgcn8?blocks=hide' target='_blank'>Open Funder Record</a><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblo9ANCn8pSVfWeJ/viwPphvyFXVvIAq4O/rec6ns2SYd7pIDWXp?blocks=hide' target='_blank'>Open Proposition Record</a>",
+    "fit_score": 2,
+    "urgency_score": 4
+  },
+  {
+    "funder_name": "The Aage V. Jensen Charity Foundation",
+    "proposition_name": "Refugee Program for Microloans and Regenerative Agriculture",
+    "y_fit": 3.091711123680692,
+    "x_urgency": 3.9328988847244264,
+    "size_arduousness": 3,
+    "text_notes": "Fit=3: Excellent thematic and geographic alignment, but the funders strict requirement to only fund internationally recognized NGOs is a critical barrier. | Urgency=4: No direct path. Success depends on finding an internationally recognized NGO to act as a fiscal sponsor or lead applicant. | Strength=1: An explicit link exists in Airtable.<br><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblyu00PsUrnWZdnN/viw93d46F5dPFqXxA/recixrzPRPiIjvma3?blocks=hide' target='_blank'>Open Funder Record</a><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblo9ANCn8pSVfWeJ/viwPphvyFXVvIAq4O/rec6ns2SYd7pIDWXp?blocks=hide' target='_blank'>Open Proposition Record</a>",
+    "fit_score": 3,
+    "urgency_score": 4
+  },
+  {
+    "funder_name": "REDAA (Reversing Environmental Degradation in Africa and Asia)",
+    "proposition_name": "Refugee Program for Microloans and Regenerative Agriculture",
+    "y_fit": 2.099397918545568,
+    "x_urgency": 2.977561811525842,
+    "size_arduousness": 3,
+    "text_notes": "Fit=2: Strong thematic fit, but a critical financial constraint (project expenditure <= 25% of lead orgs average annual turnover) is a major procedural hurdle. | Urgency=3: Medium urgency. The 2024 deadline has likely passed; next opportunities are in 2025, allowing time to plan around the financial constraint. | Strength=1: An explicit link exists in Airtable.<br><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblyu00PsUrnWZdnN/viw93d46F5dPFqXxA/reczeJPxvR84LYmmn?blocks=hide' target='_blank'>Open Funder Record</a><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblo9ANCn8pSVfWeJ/viwPphvyFXVvIAq4O/rec6ns2SYd7pIDWXp?blocks=hide' target='_blank'>Open Proposition Record</a>",
+    "fit_score": 2,
+    "urgency_score": 3
+  },
+  {
+    "funder_name": "FoundersPledge GHD-Fund",
+    "proposition_name": "Refugee Program for Microloans and Regenerative Agriculture",
+    "y_fit": 2.9180129866568096,
+    "x_urgency": 3.106211143606356,
+    "size_arduousness": 1,
+    "text_notes": "Fit=3: Moderate fit. The fund focuses on health and development, so the proposal must be framed around the propositions impacts on poverty reduction and economic resilience, not just its environmental benefits. | Urgency=3: Medium urgency. Requires drafting a strong Letter of Inquiry (LOI) to make the case. | Strength=1: An explicit link exists in Airtable.<br><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblyu00PsUrnWZdnN/viw93d46F5dPFqXxA/rec8upyS9VXlTqy0H?blocks=hide' target='_blank'>Open Funder Record</a><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblo9ANCn8pSVfWeJ/viwPphvyFXVvIAq4O/rec6ns2SYd7pIDWXp?blocks=hide' target='_blank'>Open Proposition Record</a>",
+    "fit_score": 3,
+    "urgency_score": 3
+  },
+  {
+    "funder_name": "FoundersPledge Rapid-Response-Fund",
+    "proposition_name": "Refugee Program for Microloans and Regenerative Agriculture",
+    "y_fit": 0.8703325653486824,
+    "x_urgency": 1.8522334622251821,
+    "size_arduousness": 3,
+    "text_notes": "Fit=1: Perfect alignment. The funds mission to support agricultural transformation in humanitarian contexts is an exact match. | Urgency=2: High urgency. The Rapid-Response nature of the fund suggests a fast-moving process that requires immediate investigation. | Strength=1: An explicit link exists in Airtable.<br><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblyu00PsUrnWZdnN/viw93d46F5dPFqXxA/recJECcZua5TXN9PP?blocks=hide' target='_blank'>Open Funder Record</a><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblo9ANCn8pSVfWeJ/viwPphvyFXVvIAq4O/rec6ns2SYd7pIDWXp?blocks=hide' target='_blank'>Open Proposition Record</a>",
+    "fit_score": 1,
+    "urgency_score": 2
+  },
+  {
+    "funder_name": "American Jewish World Service",
+    "proposition_name": "Refugee Program for Microloans and Regenerative Agriculture",
+    "y_fit": 0.8595620287281507,
+    "x_urgency": 0.89358053734949,
+    "size_arduousness": 3,
+    "text_notes": "Fit=1: Very high geographic and thematic fit. | Urgency=1: Immediate. The funder is a top-tier candidate for an immediate, direct overture via email with a low-arduousness process. | Strength=1: An explicit link exists in Airtable.<br><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblyu00PsUrnWZdnN/viw93d46F5dPFqXxA/recZHZ7Oi8pmmTIZC?blocks=hide' target='_blank'>Open Funder Record</a><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblo9ANCn8pSVfWeJ/viwPphvyFXVvIAq4O/rec6ns2SYd7pIDWXp?blocks=hide' target='_blank'>Open Proposition Record</a>",
+    "fit_score": 1,
+    "urgency_score": 1
+  },
+  {
+    "funder_name": "The Growald Climate Fund",
+    "proposition_name": "General Support for ERA Network",
+    "y_fit": 5.09894193316086,
+    "x_urgency": 4.927221706948318,
+    "size_arduousness": 3,
+    "text_notes": "Fit=5: No fit. The funders exclusive focus on the clean energy sector is a clear thematic mismatch with ERAs nature-based solutions. | Urgency=5: No urgency due to the lack of thematic alignment. | Strength=1: An explicit link exists in Airtable.<br><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblyu00PsUrnWZdnN/viw93d46F5dPFqXxA/recmZasQPekjRme8o?blocks=hide' target='_blank'>Open Funder Record</a><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblo9ANCn8pSVfWeJ/viwPphvyFXVvIAq4O/recQTpUUFGvVZ9W4I?blocks=hide' target='_blank'>Open Proposition Record</a>",
+    "fit_score": 5,
+    "urgency_score": 5
+  },
+  {
+    "funder_name": "The Skoll Foundation",
+    "proposition_name": "General Support for ERA Network",
+    "y_fit": 0.8662922402500128,
+    "x_urgency": 1.9139537924690282,
+    "size_arduousness": 3,
+    "text_notes": "Fit=1: Perfect alignment. The funders focus on systems-level change and empowering social entrepreneurs aligns perfectly with the ERA Network model. They provide unrestricted grants. | Urgency=2: High urgency. The explicit next step is to draft a targeted inquiry. | Strength=1: An explicit link exists in Airtable.<br><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblyu00PsUrnWZdnN/viw93d46F5dPFqXxA/rec9hdQVIyXPFY9GH?blocks=hide' target='_blank'>Open Funder Record</a><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblo9ANCn8pSVfWeJ/viwPphvyFXVvIAq4O/recQTpUUFGvVZ9W4I?blocks=hide' target='_blank'>Open Proposition Record</a>",
+    "fit_score": 1,
+    "urgency_score": 2
+  },
+  {
+    "funder_name": "CS Fund & Warsh-Mott Legacy Grant",
+    "proposition_name": "General Support for ERA Network",
+    "y_fit": 1.106723406866955,
+    "x_urgency": 1.9853598044433214,
+    "size_arduousness": 3,
+    "text_notes": "Fit=1: Perfect alignment. The funders preference for multi-year, long-term general support for network-building initiatives is an exact match for this proposition. | Urgency=2: High urgency. The explicit next step is to draft a comprehensive inquiry that includes this proposition. | Strength=1: An explicit link exists in Airtable.<br><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblyu00PsUrnWZdnN/viw93d46F5dPFqXxA/rec57irxCLfbzzOhg?blocks=hide' target='_blank'>Open Funder Record</a><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblo9ANCn8pSVfWeJ/viwPphvyFXVvIAq4O/recQTpUUFGvVZ9W4I?blocks=hide' target='_blank'>Open Proposition Record</a>",
+    "fit_score": 1,
+    "urgency_score": 2
+  },
+  {
+    "funder_name": "Small Foundation",
+    "proposition_name": "General Support for ERA Network",
+    "y_fit": 1.0502060876063661,
+    "x_urgency": 1.9339686339341582,
+    "size_arduousness": 3,
+    "text_notes": "Fit=1: Perfect alignment. The funders strategy of supporting the MSME ecosystem through systems change and impact networks is an exact match for a general support request for the ERA Network. | Urgency=2: High urgency. This is a high-priority candidate, requiring immediate investigation of their engagement process. | Strength=1: An explicit link exists in Airtable.<br><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblyu00PsUrnWZdnN/viw93d46F5dPFqXxA/rechE4lIGRFOuNxkU?blocks=hide' target='_blank'>Open Funder Record</a><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblo9ANCn8pSVfWeJ/viwPphvyFXVvIAq4O/recQTpUUFGvVZ9W4I?blocks=hide' target='_blank'>Open Proposition Record</a>",
+    "fit_score": 1,
+    "urgency_score": 2
+  },
+  {
+    "funder_name": "The Roddenberry Foundation",
+    "proposition_name": "General Support for ERA Network",
+    "y_fit": 2.9827977323302965,
+    "x_urgency": 4.045910443175014,
+    "size_arduousness": 3,
+    "text_notes": "Fit=3: Potential thematic fit, but the nomination-only application process is a major procedural barrier. | Urgency=4: Low urgency. The path is blocked without a nominator, making this a long-term prospect requiring strategic networking. | Strength=1: An explicit link exists in Airtable.<br><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblyu00PsUrnWZdnN/viw93d46F5dPFqXxA/rec2iZZl6cGLGmB33?blocks=hide' target='_blank'>Open Funder Record</a><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblo9ANCn8pSVfWeJ/viwPphvyFXVvIAq4O/recQTpUUFGvVZ9W4I?blocks=hide' target='_blank'>Open Proposition Record</a>",
+    "fit_score": 3,
+    "urgency_score": 4
+  },
+  {
+    "funder_name": "Threshold Foundation",
+    "proposition_name": "General Support for ERA Network",
+    "y_fit": 2.1180871854635375,
+    "x_urgency": 3.070345614573809,
+    "size_arduousness": 3,
+    "text_notes": "Fit=2: Strong thematic fit with their Land and Climate initiative, but requires careful framing around racial and climate equity. | Urgency=3: Low imminence. The next step is to draft a targeted email inquiry, a clear but not immediate action. | Strength=1: An explicit link exists in Airtable.<br><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblyu00PsUrnWZdnN/viw93d46F5dPFqXxA/recRYHJ67rH1W8vaM?blocks=hide' target='_blank'>Open Funder Record</a><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblo9ANCn8pSVfWeJ/viwPphvyFXVvIAq4O/recQTpUUFGvVZ9W4I?blocks=hide' target='_blank'>Open Proposition Record</a>",
+    "fit_score": 2,
+    "urgency_score": 3
+  },
+  {
+    "funder_name": "The William and Flora Hewlett Foundation",
+    "proposition_name": "General Support for ERA Network",
+    "y_fit": 4.058883637831878,
+    "x_urgency": 5.025856753835918,
+    "size_arduousness": 1,
+    "text_notes": "Fit=4: Poor procedural fit. The invitation-only process makes this inaccessible without a significant, long-term relationship-building effort. | Urgency=5: No urgency. This is a long-term strategic goal, not an immediate opportunity. | Strength=1: An explicit link exists in Airtable.<br><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblyu00PsUrnWZdnN/viw93d46F5dPFqXxA/recYgVCTU1W1hG7sY?blocks=hide' target='_blank'>Open Funder Record</a><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblo9ANCn8pSVfWeJ/viwPphvyFXVvIAq4O/recQTpUUFGvVZ9W4I?blocks=hide' target='_blank'>Open Proposition Record</a>",
+    "fit_score": 4,
+    "urgency_score": 5
+  },
+  {
+    "funder_name": "Doris Duke Charitable Foundation",
+    "proposition_name": "General Support for ERA Network",
+    "y_fit": 3.0296108947751113,
+    "x_urgency": 4.037067475620383,
+    "size_arduousness": 3,
+    "text_notes": "Fit=3: Good potential thematic fit, but no relevant open competitions are available at this time. | Urgency=4: Low urgency. The next step is to monitor for future opportunities. | Strength=1: An explicit link exists in Airtable.<br><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblyu00PsUrnWZdnN/viw93d46F5dPFqXxA/rec2ZfXEUDqAyvG3y?blocks=hide' target='_blank'>Open Funder Record</a><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblo9ANCn8pSVfWeJ/viwPphvyFXVvIAq4O/recQTpUUFGvVZ9W4I?blocks=hide' target='_blank'>Open Proposition Record</a>",
+    "fit_score": 3,
+    "urgency_score": 4
+  },
+  {
+    "funder_name": "David and Lucile Packard Foundation",
+    "proposition_name": "General Support for ERA Network",
+    "y_fit": 4.100510550121921,
+    "x_urgency": 4.893786390040858,
+    "size_arduousness": 3,
+    "text_notes": "Fit=4: Poor procedural fit. There are no active RFPs, making it impossible to apply at this time. | Urgency=5: No urgency. This is a watch and wait opportunity with no immediate actions to take. | Strength=1: An explicit link exists in Airtable.<br><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblyu00PsUrnWZdnN/viw93d46F5dPFqXxA/recGyrRFbjg07885m?blocks=hide' target='_blank'>Open Funder Record</a><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblo9ANCn8pSVfWeJ/viwPphvyFXVvIAq4O/recQTpUUFGvVZ9W4I?blocks=hide' target='_blank'>Open Proposition Record</a>",
+    "fit_score": 4,
+    "urgency_score": 5
+  },
+  {
+    "funder_name": "Regenerative Agriculture Foundation",
+    "proposition_name": "General Support for ERA Network",
+    "y_fit": 4.138220313808906,
+    "x_urgency": 1.9753648776380421,
+    "size_arduousness": 1,
+    "text_notes": "Fit=4: Poor fit. Major geographic mismatch as the funder is US-only. | Urgency=2: High imminence for a low-effort action. A simple contact form is available for a general introduction. | Strength=1: An explicit link exists in Airtable.<br><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblyu00PsUrnWZdnN/viw93d46F5dPFqXxA/recmEfeeA5r7auCF3?blocks=hide' target='_blank'>Open Funder Record</a><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblo9ANCn8pSVfWeJ/viwPphvyFXVvIAq4O/recQTpUUFGvVZ9W4I?blocks=hide' target='_blank'>Open Proposition Record</a>",
+    "fit_score": 4,
+    "urgency_score": 2
+  },
+  {
+    "funder_name": "White Feather Foundation",
+    "proposition_name": "Hearth Miyawaki and Food Forest Project (Coakee leads)",
+    "y_fit": 3.0390053782660607,
+    "x_urgency": 3.0727457095857145,
+    "size_arduousness": 3,
+    "text_notes": "Fit=3: Moderate fit. Good geographic alignment (Africa/Uganda), but the most relevant funding category (Environment) is closed for the year. The project would need to be reframed for the Education and Health category opening in October. | Urgency=3: Medium urgency. The next action is to monitor for the October window and prepare to reframe the proposal. | Strength=1: An explicit link exists in Airtable.<br><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblyu00PsUrnWZdnN/viw93d46F5dPFqXxA/recM4NHJXRfIP6cZg?blocks=hide' target='_blank'>Open Funder Record</a><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblo9ANCn8pSVfWeJ/viwPphvyFXVvIAq4O/recZbUaEbqfgrK6rB?blocks=hide' target='_blank'>Open Proposition Record</a>",
+    "fit_score": 3,
+    "urgency_score": 3
+  },
+  {
+    "funder_name": "The Clima Fund",
+    "proposition_name": "Hearth Miyawaki and Food Forest Project (Coakee leads)",
+    "y_fit": 3.9791707930468165,
+    "x_urgency": 4.101047336975766,
+    "size_arduousness": 3,
+    "text_notes": "Fit=4: Poor fit. The Clima Fund is a collaborative and does not accept direct applications. The only path is to approach one of its four member foundations. | Urgency=4: Long-term. The next step is to research the member foundations (Global Greengrants, Grassroots Intl, etc.) for a direct approach. | Strength=1: An explicit link exists in Airtable.<br><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblyu00PsUrnWZdnN/viw93d46F5dPFqXxA/recQUSwJfviHnzZ5G?blocks=hide' target='_blank'>Open Funder Record</a><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblo9ANCn8pSVfWeJ/viwPphvyFXVvIAq4O/recZbUaEbqfgrK6rB?blocks=hide' target='_blank'>Open Proposition Record</a>",
+    "fit_score": 4,
+    "urgency_score": 4
+  },
+  {
+    "funder_name": "The Climate Restoration Fund",
+    "proposition_name": "Hearth Miyawaki and Food Forest Project (Coakee leads)",
+    "y_fit": 3.9233959709198927,
+    "x_urgency": 4.966549967260791,
+    "size_arduousness": 3,
+    "text_notes": "Fit=4: Perfect thematic fit for seed funding, but procedurally impossible as they are not yet accepting applications. | Urgency=5: No urgency. The only action is to monitor their website for future announcements. | Strength=1: An explicit link exists in Airtable.<br><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblyu00PsUrnWZdnN/viw93d46F5dPFqXxA/recbCljkLjbvHmgz1?blocks=hide' target='_blank'>Open Funder Record</a><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblo9ANCn8pSVfWeJ/viwPphvyFXVvIAq4O/recZbUaEbqfgrK6rB?blocks=hide' target='_blank'>Open Proposition Record</a>",
+    "fit_score": 4,
+    "urgency_score": 5
+  },
+  {
+    "funder_name": "The Agroecology Fund",
+    "proposition_name": "Hearth Miyawaki and Food Forest Project (Coakee leads)",
+    "y_fit": 1.1043159202030597,
+    "x_urgency": 1.9379513046569297,
+    "size_arduousness": 3,
+    "text_notes": "Fit=1: Perfect alignment. A global fund supporting grassroots agroecology with a strong focus on Africa and a partnership with AFSA. Ideal for a Uganda-based project. | Urgency=2: High urgency. This is a prime candidate requiring immediate investigation of their grant cycles. | Strength=1: An explicit link exists in Airtable.<br><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblyu00PsUrnWZdnN/viw93d46F5dPFqXxA/rec8K1xHa1bZmdCsX?blocks=hide' target='_blank'>Open Funder Record</a><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblo9ANCn8pSVfWeJ/viwPphvyFXVvIAq4O/recZbUaEbqfgrK6rB?blocks=hide' target='_blank'>Open Proposition Record</a>",
+    "fit_score": 1,
+    "urgency_score": 2
+  },
+  {
+    "funder_name": "CS Fund & Warsh-Mott Legacy Grant",
+    "proposition_name": "Hearth Miyawaki and Food Forest Project (Coakee leads)",
+    "y_fit": 0.998144701509729,
+    "x_urgency": 1.8717794292650816,
+    "size_arduousness": 3,
+    "text_notes": "Fit=1: Perfect alignment. The funders mission for a just transition to regenerative food systems and preference for long-term general support is an ideal match. | Urgency=2: High urgency. The notes provide a clear and immediate next step to draft a comprehensive inquiry. | Strength=1: An explicit link exists in Airtable.<br><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblyu00PsUrnWZdnN/viw93d46F5dPFqXxA/rec57irxCLfbzzOhg?blocks=hide' target='_blank'>Open Funder Record</a><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblo9ANCn8pSVfWeJ/viwPphvyFXVvIAq4O/recZbUaEbqfgrK6rB?blocks=hide' target='_blank'>Open Proposition Record</a>",
+    "fit_score": 1,
+    "urgency_score": 2
+  },
+  {
+    "funder_name": "The Nature Conservancy",
+    "proposition_name": "Hearth Miyawaki and Food Forest Project (Coakee leads)",
+    "y_fit": 2.108260565715395,
+    "x_urgency": 1.9725727895684688,
+    "size_arduousness": 3,
+    "text_notes": "Fit=2: Strong fit. Their dedicated Africa Program in neighboring countries makes them an excellent potential partner for community-led restoration. | Urgency=2: High urgency. This is a high-priority candidate requiring immediate research into their Africa Programs application process. | Strength=1: An explicit link exists in Airtable.<br><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblyu00PsUrnWZdnN/viw93d46F5dPFqXxA/recU735K8mkxXgcn8?blocks=hide' target='_blank'>Open Funder Record</a><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblo9ANCn8pSVfWeJ/viwPphvyFXVvIAq4O/recZbUaEbqfgrK6rB?blocks=hide' target='_blank'>Open Proposition Record</a>",
+    "fit_score": 2,
+    "urgency_score": 2
+  },
+  {
+    "funder_name": "Open Society Foundations",
+    "proposition_name": "Nakivale Regenerative Ecosystem Development Program (Diana leads)",
+    "y_fit": 4.140457034091649,
+    "x_urgency": 5.076816619173409,
+    "size_arduousness": 1,
+    "text_notes": "Fit=4: Poor fit. The funders focus is on democracy/human rights, and their process is invitation-only, making it a difficult match for an ecosystem project. | Urgency=5: No urgency. The only action is long-term relationship building to seek an invitation. | Strength=1: An explicit link exists in Airtable.<br><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblyu00PsUrnWZdnN/viw93d46F5dPFqXxA/recxhMX3sInu821kb?blocks=hide' target='_blank'>Open Funder Record</a><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblo9ANCn8pSVfWeJ/viwPphvyFXVvIAq4O/recjFeyiAVujMbhPX?blocks=hide' target='_blank'>Open Proposition Record</a>",
+    "fit_score": 4,
+    "urgency_score": 5
+  },
+  {
+    "funder_name": "Charles Stewart Mott Foundation",
+    "proposition_name": "Nakivale Regenerative Ecosystem Development Program (Diana leads)",
+    "y_fit": 1.9917227570277036,
+    "x_urgency": 2.0202608039771492,
+    "size_arduousness": 3,
+    "text_notes": "Fit=2: Excellent thematic and geographic alignment with their Advancing Climate Change Solutions program. The main hurdle is the relationship-based approach. | Urgency=2: High urgency. A high-priority prospect with a clear next step to connect with the identified program officer. | Strength=1: An explicit link exists in Airtable.<br><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblyu00PsUrnWZdnN/viw93d46F5dPFqXxA/rec1pTRi0nAPaPXjX?blocks=hide' target='_blank'>Open Funder Record</a><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblo9ANCn8pSVfWeJ/viwPphvyFXVvIAq4O/recjFeyiAVujMbhPX?blocks=hide' target='_blank'>Open Proposition Record</a>",
+    "fit_score": 2,
+    "urgency_score": 2
+  },
+  {
+    "funder_name": "Mitsubishi Corporation Fund for Europe and Africa",
+    "proposition_name": "Nakivale Regenerative Ecosystem Development Program (Diana leads)",
+    "y_fit": 3.0718546954454955,
+    "x_urgency": 2.9409971210193313,
+    "size_arduousness": 3,
+    "text_notes": "Fit=3: Strong thematic alignment, but the partnership-only model requires identifying and engaging with one of their existing partners, which is a significant procedural hurdle. | Urgency=3: Medium urgency. The next step is a strategic research task to identify their current partners in the region. | Strength=1: An explicit link exists in Airtable.<br><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblyu00PsUrnWZdnN/viw93d46F5dPFqXxA/reczBDJ9Ji4AQpcVl?blocks=hide' target='_blank'>Open Funder Record</a><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblo9ANCn8pSVfWeJ/viwPphvyFXVvIAq4O/recjFeyiAVujMbhPX?blocks=hide' target='_blank'>Open Proposition Record</a>",
+    "fit_score": 3,
+    "urgency_score": 3
+  },
+  {
+    "funder_name": "The Arkbound Foundation -- Climate Emergency Fund",
+    "proposition_name": "Nakivale Regenerative Ecosystem Development Program (Diana leads)",
+    "y_fit": 1.9059978659931216,
+    "x_urgency": 1.9730086605931612,
+    "size_arduousness": 3,
+    "text_notes": "Fit=2: Strong fit. The funder accepts rolling applications for projects with a clear climate focus, which is a good match for the Nakivale program. | Urgency=2: High urgency. As a strong candidate with a rolling application process, preparing and submitting a proposal is a high-priority action. | Strength=1: An explicit link exists in Airtable.<br><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblyu00PsUrnWZdnN/viw93d46F5dPFqXxA/recqjh8ijBkGEC8wM?blocks=hide' target='_blank'>Open Funder Record</a><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblo9ANCn8pSVfWeJ/viwPphvyFXVvIAq4O/recjFeyiAVujMbhPX?blocks=hide' target='_blank'>Open Proposition Record</a>",
+    "fit_score": 2,
+    "urgency_score": 2
+  },
+  {
+    "funder_name": "The Adaptation Fund",
+    "proposition_name": "Nakivale Regenerative Ecosystem Development Program (Diana leads)",
+    "y_fit": 2.9069585847838084,
+    "x_urgency": 2.9377350167721255,
+    "size_arduousness": 5,
+    "text_notes": "Fit=3: Strong thematic alignment, but the complex application process requires going through an accredited Multilateral Implementing Entity (MIE), a major procedural hurdle. | Urgency=3: Medium urgency. The next step is a strategic task to identify and build a relationship with an MIE partner. | Strength=1: An explicit link exists in Airtable.<br><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblyu00PsUrnWZdnN/viw93d46F5dPFqXxA/rec63KKlobEwomHOQ?blocks=hide' target='_blank'>Open Funder Record</a><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblo9ANCn8pSVfWeJ/viwPphvyFXVvIAq4O/recjFeyiAVujMbhPX?blocks=hide' target='_blank'>Open Proposition Record</a>",
+    "fit_score": 3,
+    "urgency_score": 3
+  },
+  {
+    "funder_name": "Ecosystem Restoration Communities (ERC)",
+    "proposition_name": "Nakivale Regenerative Ecosystem Development Program (Diana leads)",
+    "y_fit": 4.956296769937921,
+    "x_urgency": 5.105746525121554,
+    "size_arduousness": 3,
+    "text_notes": "Fit=5: No fit. This is a network of restoration projects, not a grant-making foundation. They do not offer grants to external organizations. | Urgency=5: No urgency. Not a funding opportunity. | Strength=1: An explicit link exists in Airtable.<br><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblyu00PsUrnWZdnN/viw93d46F5dPFqXxA/recECiO3sCX2FOit1?blocks=hide' target='_blank'>Open Funder Record</a><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblo9ANCn8pSVfWeJ/viwPphvyFXVvIAq4O/recjFeyiAVujMbhPX?blocks=hide' target='_blank'>Open Proposition Record</a>",
+    "fit_score": 5,
+    "urgency_score": 5
+  },
+  {
+    "funder_name": "The IKEA Foundation",
+    "proposition_name": "Nakivale Regenerative Ecosystem Development Program (Diana leads)",
+    "y_fit": 4.002716937360375,
+    "x_urgency": 5.128768669799272,
+    "size_arduousness": 3,
+    "text_notes": "Fit=4: Excellent thematic and geographic alignment, but procedurally impossible as they do not accept unsolicited proposals. | Urgency=5: No urgency. This is a long-term prospect requiring strategic networking. | Strength=1: An explicit link exists in Airtable.<br><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblyu00PsUrnWZdnN/viw93d46F5dPFqXxA/recuFn9Ubjw8D8YCj?blocks=hide' target='_blank'>Open Funder Record</a><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblo9ANCn8pSVfWeJ/viwPphvyFXVvIAq4O/recjFeyiAVujMbhPX?blocks=hide' target='_blank'>Open Proposition Record</a>",
+    "fit_score": 4,
+    "urgency_score": 5
+  },
+  {
+    "funder_name": "The Climate Restoration Fund",
+    "proposition_name": "Nakivale Regenerative Ecosystem Development Program (Diana leads)",
+    "y_fit": 4.097962874717576,
+    "x_urgency": 5.054667194955221,
+    "size_arduousness": 3,
+    "text_notes": "Fit=4: Perfect thematic fit, but procedurally impossible as they are not yet accepting applications. (Duplicate of cycle 50) | Urgency=5: No urgency. Monitor website for announcements. | Strength=1: An explicit link exists in Airtable.<br><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblyu00PsUrnWZdnN/viw93d46F5dPFqXxA/recbCljkLjbvHmgz1?blocks=hide' target='_blank'>Open Funder Record</a><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblo9ANCn8pSVfWeJ/viwPphvyFXVvIAq4O/recjFeyiAVujMbhPX?blocks=hide' target='_blank'>Open Proposition Record</a>",
+    "fit_score": 4,
+    "urgency_score": 5
+  },
+  {
+    "funder_name": "African Climate Foundation",
+    "proposition_name": "Nakivale Regenerative Ecosystem Development Program (Diana leads)",
+    "y_fit": 2.872528315398054,
+    "x_urgency": 2.9993541944182422,
+    "size_arduousness": 3,
+    "text_notes": "Fit=3: Potential fit based on name. Research is required to confirm alignment. | Urgency=3: Medium urgency. Research is needed to determine if this is a viable opportunity. | Strength=1: An explicit link exists in Airtable.<br><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblyu00PsUrnWZdnN/viw93d46F5dPFqXxA/recJhFvW5M8A6Pfzw?blocks=hide' target='_blank'>Open Funder Record</a><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblo9ANCn8pSVfWeJ/viwPphvyFXVvIAq4O/recjFeyiAVujMbhPX?blocks=hide' target='_blank'>Open Proposition Record</a>",
+    "fit_score": 3,
+    "urgency_score": 3
+  },
+  {
+    "funder_name": "Global EbA Fund",
+    "proposition_name": "Nakivale Regenerative Ecosystem Development Program (Diana leads)",
+    "y_fit": 2.9952832794913293,
+    "x_urgency": 3.871592514206029,
+    "size_arduousness": 5,
+    "text_notes": "Fit=3: Excellent thematic fit (Ecosystem-based Adaptation), but the application window is currently closed. | Urgency=4: Low urgency. The next action is to monitor for the next call for proposals and prepare the extensive application materials. | Strength=1: An explicit link exists in Airtable.<br><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblyu00PsUrnWZdnN/viw93d46F5dPFqXxA/recNWDjqHXoSb0Qlm?blocks=hide' target='_blank'>Open Funder Record</a><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblo9ANCn8pSVfWeJ/viwPphvyFXVvIAq4O/recjFeyiAVujMbhPX?blocks=hide' target='_blank'>Open Proposition Record</a>",
+    "fit_score": 3,
+    "urgency_score": 4
+  },
+  {
+    "funder_name": "Gupta Family Foundation Grant",
+    "proposition_name": "Nakivale Regenerative Ecosystem Development Program (Diana leads)",
+    "y_fit": 2.109155737117053,
+    "x_urgency": 0.9926707309149524,
+    "size_arduousness": 3,
+    "text_notes": "Fit=2: Strong fit. The mission to support smaller, founder-led organizations globally aligns well. | Urgency=1: Critical urgency. The application window opens after July 15th and is limited to the first 50 applications on a first-come, first-served basis. Immediate preparation is required. | Strength=1: An explicit link exists in Airtable.<br><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblyu00PsUrnWZdnN/viw93d46F5dPFqXxA/recNCfO5KXCbnb3nT?blocks=hide' target='_blank'>Open Funder Record</a><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblo9ANCn8pSVfWeJ/viwPphvyFXVvIAq4O/recjFeyiAVujMbhPX?blocks=hide' target='_blank'>Open Proposition Record</a>",
+    "fit_score": 2,
+    "urgency_score": 1
+  },
+  {
+    "funder_name": "European Climate Foundation (ECF)",
+    "proposition_name": "Nakivale Regenerative Ecosystem Development Program (Diana leads)",
+    "y_fit": 5.149490175556061,
+    "x_urgency": 4.903373382159867,
+    "size_arduousness": 3,
+    "text_notes": "Fit=5: No fit. The ECF is a strategic foundation focused on high-level policy and does not fund on-the-ground projects. They also do not accept unsolicited proposals. | Urgency=5: No urgency. Not a direct funding opportunity. | Strength=1: An explicit link exists in Airtable.<br><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblyu00PsUrnWZdnN/viw93d46F5dPFqXxA/recUzcnjnZjVU0fN0?blocks=hide' target='_blank'>Open Funder Record</a><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblo9ANCn8pSVfWeJ/viwPphvyFXVvIAq4O/recjFeyiAVujMbhPX?blocks=hide' target='_blank'>Open Proposition Record</a>",
+    "fit_score": 5,
+    "urgency_score": 5
+  },
+  {
+    "funder_name": "Addax & Oryx Foundation",
+    "proposition_name": "Nakivale Regenerative Ecosystem Development Program (Diana leads)",
+    "y_fit": 0.9412526229060928,
+    "x_urgency": 1.979937614998302,
+    "size_arduousness": 3,
+    "text_notes": "Fit=1: Perfect alignment. The foundations explicit focus on sustainable development in Uganda is a direct match for the Nakivale program, and the application process is open and clear. | Urgency=2: High urgency. This is a high-priority prospect warranting immediate action to prepare and submit a proposal. | Strength=1: An explicit link exists in Airtable.<br><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblyu00PsUrnWZdnN/viw93d46F5dPFqXxA/rec2X39fhq16M7DQn?blocks=hide' target='_blank'>Open Funder Record</a><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblo9ANCn8pSVfWeJ/viwPphvyFXVvIAq4O/recjFeyiAVujMbhPX?blocks=hide' target='_blank'>Open Proposition Record</a>",
+    "fit_score": 1,
+    "urgency_score": 2
+  },
+  {
+    "funder_name": "The Agroecology Fund",
+    "proposition_name": "Nakivale Regenerative Ecosystem Development Program (Diana leads)",
+    "y_fit": 1.0194353897928417,
+    "x_urgency": 1.8521209686422895,
+    "size_arduousness": 3,
+    "text_notes": "Fit=1: Perfect alignment. A global fund supporting grassroots agroecology with a strong focus on Africa and a partnership with AFSA. Ideal for a Uganda-based project. (Previously analyzed in cycle 51) | Urgency=2: High urgency. This is a prime candidate requiring immediate investigation of their grant cycles. | Strength=1: An explicit link exists in Airtable.<br><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblyu00PsUrnWZdnN/viw93d46F5dPFqXxA/rec8K1xHa1bZmdCsX?blocks=hide' target='_blank'>Open Funder Record</a><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblo9ANCn8pSVfWeJ/viwPphvyFXVvIAq4O/recjFeyiAVujMbhPX?blocks=hide' target='_blank'>Open Proposition Record</a>",
+    "fit_score": 1,
+    "urgency_score": 2
+  },
+  {
+    "funder_name": "CS Fund & Warsh-Mott Legacy Grant",
+    "proposition_name": "Nakivale Regenerative Ecosystem Development Program (Diana leads)",
+    "y_fit": 8.08936004311657,
+    "x_urgency": 7.048981049001597,
+    "size_arduousness": 3,
+    "text_notes": "Excellent alignment with funders focus on regenerative economies and food systems. The Nakivale project directly addresses their Food Sovereignty program goals. High potential for multi-year general support.<br><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblyu00PsUrnWZdnN/viw93d46F5dPFqXxA/rec57irxCLfbzzOhg?blocks=hide' target='_blank'>Open Funder Record</a><br><a href='https://airtable.com/appfze9r9wI0QNjmT/tblo9ANCn8pSVfWeJ/viwPphvyFXVvIAq4O/recjFeyiAVujMbhPX?blocks=hide' target='_blank'>Open Proposition Record</a>",
+    "fit_score": 8,
+    "urgency_score": 7
+  }
+]

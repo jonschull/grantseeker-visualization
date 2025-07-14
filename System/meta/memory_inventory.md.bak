@@ -1,0 +1,30 @@
+# Memory Inventory: GrantSeekerWeb
+
+This document summarizes the key project memories, principles, and context critical for AI and human handoff. It should be updated at every major milestone.
+
+---
+
+## 1. SD4D & Development Guidelines
+- Consultative approach: Always seek explicit approval before implementing changes.
+- Never assume server restarts or implicit state; processes must be idempotent and recoverable.
+- All steps, rationale, and documentation standards (AI-handoff, one_right_way, SD4D) are followed and reflected in code and docs.
+- Authoritative reference: `mar17b architecture.md` (re-read at the start of every session).
+
+## 2. Documentation Standards
+- All documentation is written with the assumption that a new AI system may take over at any time.
+- Every function must have clear docstrings (purpose, params, returns, side effects, dependencies).
+- System-level docs must explain architecture, data flow, workflows, failure modes, and state management.
+- All assumptions and implicit knowledge must be made explicit.
+
+## 3. Pipeline Workflow & Handoff
+- The pipeline is orchestrated via a single script, using only relative paths for portability.
+- Testing and migration plan: (1) Test in canonical location, (2) Copy and test in new project, (3) Mothball legacy code.
+- All rationale and workflow are recorded in session memory and codebase docs for future maintainers.
+
+## 4. Additional Context
+- See `meta/Working_Agreement.md` for working philosophy.
+- See `README.md` for onboarding and project overview.
+
+---
+
+*Update this inventory at every major milestone, migration, or architectural change.*
