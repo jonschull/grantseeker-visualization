@@ -1,0 +1,54 @@
+[FreshVisualization] Starting: Regenerate Airtable ID-to-name mapping (airtable_mapping.json)
+Loading environment from: /Users/admin/Library/CloudStorage/Dropbox-EcoRestorationAllianceLLC/Jon Schull/CascadeProjects/GrantSeekerWeb/System/visualization/.env
+Creating Airtable mapping dictionary...
+Processing table: Funders
+  - Processed 65 records
+Processing table: Propositions
+  - Processed 8 records
+Processing table: MatchEvaluations
+  - Processed 77 records
+
+Mapping saved to airtable_mapping.json
+
+Mapping contains 300 entries
+
+Example lookups:
+ID for funder 'The Nature Conservancy': recU735K8mkxXgcn8
+ID for proposition 'Panama Restoration Lab': rec62E9tEGDRbE90c
+----------------------------------------
+
+Direct lookups:
+Funder name for ID recU735K8mkxXgcn8: None
+
+Propositions for The Nature Conservancy:
+
+[FreshVisualization] Completed: Regenerate Airtable ID-to-name mapping (airtable_mapping.json)
+
+[FreshVisualization] Starting: Fetch Airtable match data
+[INFO] Wrote 77 records to match_data_sample.json
+
+[FreshVisualization] Completed: Fetch Airtable match data
+
+[FreshVisualization] Starting: Transform to visualization schema
+[INFO] Reading input from match_data_sample.json
+[INFO] Writing output to visualization_data.json
+[INFO] Wrote 77 records to visualization_data.json
+
+[FreshVisualization] Completed: Transform to visualization schema
+
+[FreshVisualization] Starting: Generate HTML visualization
+Loading environment from: /Users/admin/Library/CloudStorage/Dropbox-EcoRestorationAllianceLLC/Jon Schull/CascadeProjects/GrantSeekerWeb/System/visualization/.env
+[INFO] Template path: templates/visualization_template.html
+[INFO] Data path: visualization_data.json
+[INFO] Checkboxer path: checkboxer.js
+[INFO] Output HTML: outputs/opportunity_visualization.html
+[STAMP] {
+  "generation_date": "2025-07-16T03:09:55.409539+00:00",
+  "code_version": "9c906a3",
+  "mapping_version": "2025-07-16T03:09:53.697397+00:00"
+}
+Successfully generated outputs/opportunity_visualization.html
+
+[FreshVisualization] Completed: Generate HTML visualization
+
+[FreshVisualization] Pipeline complete. HTML output: System/visualization/outputs/opportunity_visualization.html

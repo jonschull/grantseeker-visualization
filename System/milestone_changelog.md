@@ -7,6 +7,7 @@ A simple, auditable log of key incremental achievements, decisions, and state ch
 | 2025-07-15 21:01 EDT  | Freeze validated HTML as Golden Master                   | a16675c     | [Your Name] | Initial canonical HTML     |
 | 2025-07-15 21:03 EDT  | Add regression test script (reviewed, tested, committed) | f39124b     | [Your Name] | Script: compare_to_golden.py |
 | 2025-07-15 21:12 EDT  | Update bootstrap workflow to explicitly load and reference milestone changelog | 48fff13     | [Your Name] | .windsurf/workflows/bootstrap.md now ensures System/milestone_changelog.md is always recovered and acknowledged |
+| 2025-07-15 22:55 EDT  | Promote stamp-enabled HTML output as new Golden Master (includes code/data versioning for reproducibility) | 9c906a3     | jonschull   | HTML, Python, and mapping versions now paired in metadata |
 
 ## Usage
 - **Who updates:** Anyone making a significant, reviewable change to the system.

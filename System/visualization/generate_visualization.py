@@ -31,6 +31,31 @@ import sys
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 from create_mapping_dict import load_mapping_from_file, lookup_id
 
+import subprocess
+from datetime import timezone
+
+def get_git_commit_hash():
+    try:
+        return subprocess.check_output(['git', 'rev-parse', '--short', 'HEAD'], cwd=os.path.dirname(os.path.abspath(__file__))).decode('utf-8').strip()
+    except Exception:
+        return 'unknown'
+
+def get_file_mtime_iso(path):
+    try:
+        ts = os.path.getmtime(path)
+        return datetime.fromtimestamp(ts, tz=timezone.utc).isoformat()
+    except Exception:
+        return 'unknown'
+
+# --- Generate and log a reproducibility stamp ---
+stamp = {
+    'generation_date': datetime.now(timezone.utc).isoformat(),
+    'code_version': get_git_commit_hash(),
+    'mapping_version': None  # to be set after mapping_path is defined
+}
+
+# Will set mapping_version after mapping_path is known
+
 # --- Argument Parsing ---
 def parse_args():
     """Parses command-line arguments for the script."""
@@ -93,6 +118,10 @@ except json.JSONDecodeError:
     exit()
 
 # --- Airtable Mapping Loading and Name-to-ID Dicts ---
+# Set mapping_version in the stamp
+stamp['mapping_version'] = get_file_mtime_iso(os.path.join(script_dir, 'airtable_mapping.json'))
+print(f"[STAMP] {json.dumps(stamp, indent=2)}")
+
 # Load the mapping from the canonical JSON file
 mapping_path = os.path.join(script_dir, 'airtable_mapping.json')
 try:
@@ -181,8 +210,15 @@ checkboxer_script_escaped = json.dumps(checkboxer_script)  # Escape for JS embed
 
 # Replace the placeholders in the template with the prepared strings.
 final_html = template_string.replace('{METADATA_PLACEHOLDER}', metadata_string_for_embedding)
+# Prepare the metadata string for embedding
+metadata_string_for_embedding = json.dumps(stamp, indent=None)
+final_html = final_html.replace('{METADATA_PLACEHOLDER}', metadata_string_for_embedding)
 final_html = final_html.replace('{CONFIG_PLACEHOLDER}', config_string_for_embedding)
 final_html = final_html.replace('{DATA_PLACEHOLDER}', json_string_for_embedding)
+
+# Inject name-to-id mappings as JS variables (for template use)
+prop_id_js = f"<script>const propositionNameToId = {proposition_name_to_id_json}; const funderNameToId = {funder_name_to_id_json};</script>"
+final_html = final_html.replace('// {NAME_TO_ID_PLACEHOLDER}', prop_id_js)
 
 # Inject the checkboxer script content
 script_tag = f'<script data-checkboxer>{checkboxer_script}</script>'

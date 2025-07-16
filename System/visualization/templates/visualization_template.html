@@ -85,6 +85,7 @@
 
     <div id="plotly-div" style="width:100%; height:90vh;"></div>
 
+    // {NAME_TO_ID_PLACEHOLDER}
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // =========================================================================
@@ -174,11 +175,12 @@
                 // Check viewConfig to see if this checkbox should be checked by default.
                 const useDefault = !viewConfig.initial_propositions || viewConfig.initial_propositions.length === 0;
                 const isChecked = useDefault || viewConfig.initial_propositions.includes(name);
+                const recId = propositionNameToId[name] || '';
                 prop_legend_html += `
                     <div class="custom-legend-item">
-                        <input type="checkbox" class="prop-checkbox" data-name="${name}" ${isChecked ? 'checked' : ''}>
+                        <input type="checkbox" class="prop-checkbox" id="${recId}" data-id="${recId}" data-name="${name}" ${isChecked ? 'checked' : ''}>
                         <div class="legend-color-box" style="background-color:${propColorMap.get(name)};"></div>
-                        <label>${name}</label>
+                        <label for="${recId}">${name}</label>
                     </div>`;
             });
             
@@ -188,11 +190,12 @@
                 // Check viewConfig to see if this checkbox should be checked by default.
                 const useDefault = !viewConfig.initial_funders || viewConfig.initial_funders.length === 0;
                 const isChecked = useDefault || viewConfig.initial_funders.includes(name);
+                const recId = funderNameToId[name] || '';
                 funder_legend_html += `
                     <div class="custom-legend-item">
-                        <input type="checkbox" class="funder-checkbox" data-name="${name}" ${isChecked ? 'checked' : ''}>
+                        <input type="checkbox" class="funder-checkbox" id="${recId}" data-id="${recId}" data-name="${name}" ${isChecked ? 'checked' : ''}>
                         <div class="legend-symbol">${funderSymbolEntityMap.get(name)}</div>
-                        <label>${name}</label>
+                        <label for="${recId}">${name}</label>
                     </div>`;
             });
 
