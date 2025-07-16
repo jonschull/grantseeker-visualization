@@ -29,6 +29,14 @@ The following items are preserved from earlier planning and are not part of the 
 
 # Immediate Next Steps implement Stateful Checkbox Architecture for GrantSeekerWeb:
 
+### ✅ Milestone Complete: Robust Modular Checkbox–URL Sync
+
+- All objectives for modular, robust checkbox–URL synchronization are complete.
+- The implementation has been regression tested and validated with no errors.
+- Documentation and changelog have been updated.
+- System is ready for next milestone or handoff.
+
+
 >>>WE ARE HERE see Change Log<<<<
 
 ## 1. Problem Statement
@@ -43,7 +51,7 @@ As the GrantSeekerWeb visualization evolves, the UI state (especially checkbox s
 ## 2. Approach
 
 ### 2.1. URL-Driven UI State
-- Each checkbox is assigned [by what? the generate_visualzation script??] a unique, stable identifier (the record’s ID).
+- Each checkbox is assigned a unique, stable identifier (the record’s ID).
 - The URL encodes the state of each checkbox by its ID, e.g. `?checked=recA,recB,recC`.
 - Special-case checkboxes (e.g., "AllPropositions") use reserved IDs.
 - **NOTE:** With current Airtable record IDs (17 chars each), browser compatibility limits us to about 110 checked boxes before the URL becomes too long (2,000 chars). If the number of selectable items grows, we will need to implement a more compact encoding or server-side state. This is not urgent, but should be revisited if the project/funder count approaches this limit.
@@ -141,19 +149,109 @@ As the GrantSeekerWeb visualization evolves, the UI state (especially checkbox s
 
 ---
 
-## 7. Incremental Implementation Plan
+## 7. Incremental Implementation Plan (2025-07-16)
 
-### Step 1: Baseline Validation
-- Confirm current visualization functionality: checkbox states, visualization, interactivity.
-- Ensure all existing checkboxes have unique, stable IDs (preferably record IDs).
-- Commit the baseline for easy rollback.
-- Save a canonical HTML file (the "golden master") after explicit, reviewed, and documented approval of a new UI/UX contract. This file must not be updated with each change; it is a regression-proof reference.
-- Create a script to rapidly confirm that the relevant data (chart data, checkbox states, and interactivity) remain true to the canonical HTML file. The test utility must always compare to the original canonical file, never a silently updated version. Any detected change is a red flag for review, not an opportunity to update the canonical reference.
+This plan is designed for both human and AI collaborators. Follow each step incrementally, regression-test after every change, and document all achievements in the milestone changelog. Never update the golden master or merge changes without explicit review and approval.
 
-### Step 2: Embed RECORD_NAME_ID Mapping
-- Modify the HTML generation process to include a `{Record Name: Record ID}` mapping in an HTML comment or JSON block.
-- Regenerate the HTML and confirm:
-  - Checkbox states remain unchanged
+### Step 1: Analyze and Map Current Logic
+- Review all code (JS and Python) related to checkbox state, URL query parameters, and mapping embedding.
+- Document where and how URL→checkbox and checkbox→URL sync is currently handled.
+- Add debug logging at all sync points.
+
+### Step 2: Modularize and Isolate Sync Logic
+- Refactor code to create explicit, callable functions for:
+  - Setting checkboxes from URL (`setCheckboxesFromUrl()`)
+  - Updating URL from current checkbox state (`updateUrlFromCheckboxes()`)
+- Ensure these functions are available for both initial load and manual testing.
+
+### Step 3: Robust Edge Case Handling
+- In `setCheckboxesFromUrl()`, handle malformed, missing, or obsolete IDs gracefully (log, warn, never crash).
+- Ensure all checkboxes are assigned unique, stable IDs (record IDs) in the HTML.
+- Validate that special-case toggles (e.g., "AllPropositions") are handled as reserved IDs.
+
+### Step 4: Embed and Leverage Mapping
+- Confirm the `{Record Name: Record ID}` mapping is embedded in the HTML output as a JSON block or comment.
+- Reference this mapping in diagnostics and for future recovery scenarios.
+
+### Step 5: Regression Test and Manual Validation
+- After each code increment, run the regression test script to compare output to the canonical HTML file.
+- Manually validate that:
+  - Checkbox state is restored from the URL
+  - Checkbox changes update the URL
+  - Visualization and interactivity remain correct
+  - No console errors or warnings appear
+- Only update the golden master after explicit review and approval.
+
+### Step 6: Document and Commit
+- After each validated increment:
+  - Commit with a clear message
+  - Add an entry to `System/milestone_changelog.md` (include date, commit hash, and summary)
+  - Update onboarding/README as needed to reflect any new process discipline or architectural decisions
+
+### Step 7: Orientation for Bootstrapping AI/Human
+- Always check for the canonical mapping file and use it for all ID-to-name and name-to-ID translations.
+- Never bypass regression testing or changelog discipline.
+- Treat the embedded mapping as a diagnostic tool, not a recovery guarantee.
+- If in doubt, consult the latest milestone, changelog, and onboarding docs before proceeding.
+
+---
+
+This plan ensures robust, auditable, and reversible progress toward fully URL-driven, stateful checkbox architecture in GrantSeekerWeb. It is suitable for both human and AI onboarding, and should be updated with every significant process or architectural change.
+
+---
+
+## Stepwise, Cautious Refactoring and Validation Plan (Implementation Discipline)
+
+### Step 1: Analysis and Baseline Validation
+- Ensure the current system is stable, and document the exact places where checkbox/URL sync logic occurs.
+- Map all code locations (functions, event handlers) that (a) set checkbox state from the URL, and (b) update the URL from checkbox state.
+- Note any duplication, tight coupling, or edge cases.
+- Run regression tests and perform a manual sanity check in the browser.
+- If any instability or ambiguity is found, pause and clarify before proceeding.
+
+### Step 2: Introduce `setCheckboxesFromUrl()` as a Non-Disruptive Utility
+- Add a new function that parses the URL and sets checkbox states, but do **not** yet change any existing logic or event handlers.
+- Add debug logging at entry/exit and for any edge cases (missing or obsolete IDs).
+- Expose the function on `window` for manual/console testing.
+- Manually call the function from the browser console with various URLs and confirm it works as intended.
+- Run regression tests to ensure no breakage.
+- If any issues arise, revert the function and re-analyze.
+
+### Step 3: Introduce `updateUrlFromCheckboxes()` as a Non-Disruptive Utility
+- Add a new function that collects checked IDs and updates the URL, but do **not** yet replace inline logic.
+- Add debug logging at entry/exit.
+- Expose on `window` for manual/console testing.
+- Manually call the function and confirm the URL updates as expected.
+- Run regression tests.
+- If any issues arise, revert and re-analyze.
+
+### Step 4: Replace a Single Inline Usage with Modular Function
+- Replace only one inline instance (e.g., in an individual checkbox event handler) with a call to `updateUrlFromCheckboxes()`.
+- Make the minimal change.
+- Validate manually and via regression test.
+- If stable, proceed to next event handler; if not, revert and investigate.
+
+### Step 5: Gradually Replace All Inline Usages
+- Replace all remaining inline URL update logic with the modular function, one handler at a time.
+- After each replacement, validate and review as above.
+- Only proceed if each step is stable and passes all tests.
+
+### Step 6: Integrate `setCheckboxesFromUrl()` into Initialization
+- Use the new function for URL→checkbox sync at page load.
+- Call `setCheckboxesFromUrl()` on initial load, replacing or supplementing current logic.
+- Validate and review.
+- If any breakage, revert and re-analyze.
+
+### Step 7: Final Validation and Documentation
+- Ensure all sync logic is modular, robust, and well-documented.
+- Run full regression and manual tests.
+- Update documentation and changelog.
+- Pause for explicit review before merging or updating the golden master.
+
+---
+
+This discipline ensures that each refactoring step is validated, reversible, and non-disruptive, supporting both robust engineering and safe AI/human handoff.
+
   - Visualization and interactivity are unaffected
 - Commit changes if validated; rollback if any issues arise.
 

@@ -271,6 +271,58 @@
             // Make updatePlotVisibility globally available
             window.updatePlotVisibility = updatePlotVisibility;
 
+            // --- Non-disruptive: Add setCheckboxesFromUrl utility for manual testing ---
+            function setCheckboxesFromUrl() {
+                console.log('[GSW DEBUG] setCheckboxesFromUrl: invoked');
+                const urlParams = new URLSearchParams(window.location.search);
+                const checkedParam = urlParams.get('checked');
+                if (!checkedParam) {
+                    console.log('[GSW DEBUG] setCheckboxesFromUrl: no checked param in URL');
+                    return;
+                }
+                const checkedIds = checkedParam.split(',').map(id => id.trim()).filter(Boolean);
+                const allCheckboxes = document.querySelectorAll('.prop-checkbox, .funder-checkbox');
+                const idSet = new Set(checkedIds);
+                let missingIds = [];
+                allCheckboxes.forEach(cb => {
+                    const cbId = cb.getAttribute('data-id');
+                    if (idSet.has(cbId)) {
+                        cb.checked = true;
+                    } else {
+                        cb.checked = false;
+                    }
+                });
+                checkedIds.forEach(id => {
+                    if (![...allCheckboxes].some(cb => cb.getAttribute('data-id') === id)) {
+                        missingIds.push(id);
+                    }
+                });
+                if (missingIds.length > 0) {
+                    console.warn('[GSW DEBUG] setCheckboxesFromUrl: IDs in URL not found among checkboxes:', missingIds);
+                }
+                // Log resulting state
+                allCheckboxes.forEach(cb => {
+                    console.log('[GSW DEBUG] Checkbox', cb.getAttribute('data-id'), 'checked:', cb.checked);
+                });
+                updatePlotVisibility();
+                console.log('[GSW DEBUG] setCheckboxesFromUrl: complete');
+            }
+            window.setCheckboxesFromUrl = setCheckboxesFromUrl;
+
+// --- Non-disruptive: Add updateUrlFromCheckboxes utility for manual testing ---
+function updateUrlFromCheckboxes() {
+    console.log('[GSW DEBUG] updateUrlFromCheckboxes: invoked');
+    const checkedCheckboxes = document.querySelectorAll('.prop-checkbox:checked, .funder-checkbox:checked');
+    const checkedIds = Array.from(checkedCheckboxes).map(cb => cb.getAttribute('data-id'));
+    const query = checkedIds.length > 0 ? '?checked=' + checkedIds.join(',') : '';
+    console.log('[GSW DEBUG] updateUrlFromCheckboxes: checkedIds:', checkedIds);
+    console.log('[GSW DEBUG] updateUrlFromCheckboxes: query:', query);
+    window.history.replaceState(null, '', window.location.pathname + query);
+    console.log('[GSW DEBUG] updateUrlFromCheckboxes: complete');
+}
+window.updateUrlFromCheckboxes = updateUrlFromCheckboxes;
+
+
             /**
              * Creates and displays a popup with details when a data point is clicked.
              * @param {object} data - The Plotly click event data.
@@ -378,6 +430,10 @@
                 document.getElementById('propositions-legend').innerHTML = prop_legend_html;
                 document.getElementById('funders-legend').innerHTML = funder_legend_html;
 
+                // --- Now that checkboxes are in the DOM, restore checkbox states from URL ---
+                console.log('[GSW DEBUG] Calling setCheckboxesFromUrl() after legend injection');
+                setCheckboxesFromUrl();
+
                 // updateToggleAllState is now defined at the top of the INTERACTIVITY section
 
                 /**
@@ -444,13 +500,8 @@
                     // --- Use setTimeout to ensure DOM state is settled before updating the URL ---
                     // This prevents any race condition between DOM updates and URL sync after bulk toggle.
                     setTimeout(() => {
-                        const checkedIds = Array.from(document.querySelectorAll('.prop-checkbox:checked, .funder-checkbox:checked'))
-                            .map(cb => cb.getAttribute('data-id'))
-                            .filter(Boolean);
-                        const query = checkedIds.length > 0 ? `?checked=${checkedIds.join(',')}` : '';
-                        console.log('[AllProps Toggle Handler] checkedIds:', checkedIds);
-                        console.log('[AllProps Toggle Handler] query:', query);
-                        window.history.replaceState(null, '', window.location.pathname + query);
+                        // --- Modular: Update URL using encapsulated function ---
+                        updateUrlFromCheckboxes();
                     }, 0);
                 });
                 document.getElementById('toggleAllFunders').addEventListener('change', function(e) {
@@ -459,13 +510,8 @@
                     // --- Use setTimeout to ensure DOM state is settled before updating the URL ---
                     // This prevents any race condition between DOM updates and URL sync after bulk toggle.
                     setTimeout(() => {
-                        const checkedIds = Array.from(document.querySelectorAll('.prop-checkbox:checked, .funder-checkbox:checked'))
-                            .map(cb => cb.getAttribute('data-id'))
-                            .filter(Boolean);
-                        const query = checkedIds.length > 0 ? `?checked=${checkedIds.join(',')}` : '';
-                        console.log('[AllFunders Toggle Handler] checkedIds:', checkedIds);
-                        console.log('[AllFunders Toggle Handler] query:', query);
-                        window.history.replaceState(null, '', window.location.pathname + query);
+                        // --- Modular: Update URL using encapsulated function ---
+                        updateUrlFromCheckboxes();
                     }, 0);
                 });
 
@@ -475,14 +521,8 @@
                 allCheckboxes.forEach(cb => {
                     cb.addEventListener('change', function() {
                         updatePlotVisibility();
-                        // --- Update URL with checked IDs ---
-                        const checkedIds = Array.from(document.querySelectorAll('.prop-checkbox:checked, .funder-checkbox:checked'))
-                            .map(cb => cb.getAttribute('data-id'))
-                            .filter(Boolean);
-                        const query = checkedIds.length > 0 ? `?checked=${checkedIds.join(',')}` : '';
-                        console.log('[Checkbox Change Handler] checkedIds:', checkedIds);
-                        console.log('[Checkbox Change Handler] query:', query);
-                        window.history.replaceState(null, '', window.location.pathname + query);
+                        // --- Modular: Update URL using encapsulated function ---
+                        updateUrlFromCheckboxes();
                     });
                 });
                 // Log after attaching event listeners

@@ -9,6 +9,31 @@ To create a robust, secure, and easy-to-use web system for managing and analyzin
 
 ---
 
+## Robust Checkbox–URL Synchronization
+
+GrantSeekerWeb now features a robust, modular system for synchronizing checkbox states with URL query parameters in the visualization. This ensures:
+- Users can share/bookmark precise UI states via URLs (`?checked=...`).
+- Checkbox state is restored on load and reflected in the URL as selections change.
+- The system is resilient to underlying data changes (IDs/names) and logs missing IDs for diagnostics.
+
+**Key Implementation Details:**
+- Modular JavaScript utility functions:  
+  - `setCheckboxesFromUrl()` restores checkbox state from the URL.
+  - `updateUrlFromCheckboxes()` updates the URL to reflect current checkbox state.
+- Initialization order is enforced to prevent runtime errors (checkboxes and mappings must exist before state restoration).
+- Extensive debug logging for traceability.
+- Regression testing and manual validation required for all changes.
+
+**Canonical Mapping Utilities:**
+- All ID ↔ name translation uses `System/visualization/create_mapping_dict.py` and `System/visualization/airtable_mapping.json`.
+- These utilities are the single source of truth for mapping and must be referenced in all future onboarding and documentation.
+
+**See also:**
+- [`System/visualization/stateful_checkbox_architecture.md`](System/visualization/stateful_checkbox_architecture.md) for the authoritative visualization architecture, rationale, and implementation notes for the stateful checkbox–URL sync system.
+- `System/milestone_changelog.md` for project history.
+
+---
+
 ## Browser-Based HTML Validation & Console Error Checking
 
 Robust browser-based validation is required for all HTML outputs—across all workflows (not just visualization)—to ensure that JavaScript errors, warnings, and network issues are caught early and do not reach production.
