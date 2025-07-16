@@ -27,6 +27,9 @@ import json
 import os
 import argparse
 from datetime import datetime
+import sys
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+from create_mapping_dict import load_mapping_from_file, lookup_id
 
 # --- Argument Parsing ---
 def parse_args():
@@ -88,6 +91,38 @@ except FileNotFoundError:
 except json.JSONDecodeError:
     print(f"Error: Could not decode JSON from {data_path}")
     exit()
+
+# --- Airtable Mapping Loading and Name-to-ID Dicts ---
+# Load the mapping from the canonical JSON file
+mapping_path = os.path.join(script_dir, 'airtable_mapping.json')
+try:
+    mapping = load_mapping_from_file(mapping_path)
+except Exception as e:
+    print(f"Error loading mapping from {mapping_path}: {e}")
+    mapping = None
+
+# Build {name: id} for propositions and funders
+proposition_name_to_id = {}
+funder_name_to_id = {}
+if mapping:
+    # Get all unique proposition and funder names from data
+    prop_names = sorted(list(set(item['proposition_name'] for item in json_data)))
+    funder_names = sorted(list(set(item['funder_name'] for item in json_data)))
+    for name in prop_names:
+        rec_id = lookup_id(mapping, 'Propositions', 'Name', name)
+        if rec_id:
+            proposition_name_to_id[name] = rec_id
+    for name in funder_names:
+        rec_id = lookup_id(mapping, "Funders", "FUNDER'S NAME", name)
+        if rec_id:
+            funder_name_to_id[name] = rec_id
+else:
+    print("[WARN] No mapping loaded. Name-to-ID dicts will be empty.")
+
+# Prepare JSON strings for embedding (not yet used in template)
+proposition_name_to_id_json = json.dumps(proposition_name_to_id, indent=None)
+funder_name_to_id_json = json.dumps(funder_name_to_id, indent=None)
+# Next step: inject these into the template for use in checkbox generation.
 
 # --- Team-Specific View Configuration ---
 # If a team is specified, create a view configuration to pre-select items.
