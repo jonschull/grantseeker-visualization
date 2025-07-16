@@ -34,12 +34,12 @@ class Checkboxer {
         // Check if checkboxes are present in the DOM
         const checkboxes = document.querySelectorAll('.prop-checkbox, .funder-checkbox');
         if (checkboxes.length === 0) {
-            console.log('Waiting for checkboxes to be rendered...');
+            console.log('[Checkboxer DEBUG]', 'Waiting for checkboxes to be rendered...');
             setTimeout(() => this.initializeWhenReady(), 100);
             return;
         }
         
-        console.log('All checkboxes found in DOM, initializing...');
+        console.log('[Checkboxer DEBUG]', 'All checkboxes found in DOM, initializing...');
         this.initialize();
     }
 
@@ -50,7 +50,7 @@ class Checkboxer {
         if (this.initialized) return;
         this.initialized = true;
         
-        console.log('Initializing Checkboxer with config:', this.config);
+        console.log('[Checkboxer DEBUG]', 'Initializing Checkboxer with config:', this.config);
         
         // Wait for the plot to be fully rendered
         const checkPlot = () => {
@@ -70,49 +70,55 @@ class Checkboxer {
      * Set the initial states of all checkboxes
      */
     setInitialCheckboxStates() {
-        console.log('setInitialCheckboxStates called with config:', this.config);
-        
-        // Turn off all checkboxes first
-        console.log('Turning off all checkboxes...');
-        this.toggleAllCheckboxes('prop', false);
-        this.toggleAllCheckboxes('funder', false);
-
-        // If we have team configuration, turn on the relevant checkboxes
+        console.log('[Checkboxer DEBUG]', 'setInitialCheckboxStates called with config:', this.config);
+        // Determine if URL specifies checked states
+        const urlParams = new URLSearchParams(window.location.search);
+        const checkedParam = urlParams.get('checked');
+        if (checkedParam) {
+            console.log('[Checkboxer DEBUG]', 'URL specifies checked checkboxes, will not override.');
+            return;
+        }
+        // Default: turn ALL checkboxes ON
+        console.log('[Checkboxer DEBUG]', 'Turning ON all checkboxes by default...');
+        this.toggleAllCheckboxes('prop', true);
+        this.toggleAllCheckboxes('funder', true);
+        // If config specifies initial_propositions/funders, selectively turn ON only those
         if (this.config.initial_propositions && this.config.initial_propositions.length > 0) {
-            console.log('Setting initial propositions:', this.config.initial_propositions);
+            console.log('[Checkboxer DEBUG]', 'Config specifies initial propositions, enabling only those.');
+            this.toggleAllCheckboxes('prop', false);
             this.config.initial_propositions.forEach(prop => {
-                console.log('Enabling proposition checkbox:', prop);
+                console.log('[Checkboxer DEBUG]', 'Enabling proposition checkbox:', prop);
                 this.toggleCheckbox('prop', prop, true);
             });
         } else {
-            console.log('No initial propositions configured');
+            console.log('[Checkboxer DEBUG]', 'No initial propositions configured, all ON by default.');
         }
-
         if (this.config.initial_funders && this.config.initial_funders.length > 0) {
-            console.log('Setting initial funders:', this.config.initial_funders);
+            console.log('[Checkboxer DEBUG]', 'Config specifies initial funders, enabling only those.');
+            this.toggleAllCheckboxes('funder', false);
             this.config.initial_funders.forEach(funder => {
-                console.log('Enabling funder checkbox:', funder);
+                console.log('[Checkboxer DEBUG]', 'Enabling funder checkbox:', funder);
                 this.toggleCheckbox('funder', funder, true);
             });
         } else {
-            console.log('No initial funders configured');
+            console.log('[Checkboxer DEBUG]', 'No initial funders configured, all ON by default.');
         }
 
         // Log the final state of all checkboxes
         setTimeout(() => {
-            console.log('Final checkbox states:');
-            console.log('Propositions:');
+            console.log('[Checkboxer DEBUG]', 'Final checkbox states:');
+            console.log('[Checkboxer DEBUG]', 'Propositions:');
             document.querySelectorAll('.prop-checkbox').forEach(cb => {
-                console.log(`- ${cb.dataset.name}: ${cb.checked ? 'checked' : 'unchecked'}`);
+                console.log('[Checkboxer DEBUG]', `- ${cb.dataset.name}: ${cb.checked ? 'checked' : 'unchecked'}`);
             });
-            console.log('Funders:');
+            console.log('[Checkboxer DEBUG]', 'Funders:');
             document.querySelectorAll('.funder-checkbox').forEach(cb => {
-                console.log(`- ${cb.dataset.name}: ${cb.checked ? 'checked' : 'unchecked'}`);
+                console.log('[Checkboxer DEBUG]', `- ${cb.dataset.name}: ${cb.checked ? 'checked' : 'unchecked'}`);
             });
         }, 100);
 
         // Trigger the plot update
-        console.log('Triggering plot update...');
+        console.log('[Checkboxer DEBUG]', 'Triggering plot update...');
         this.triggerPlotUpdate();
     }
 
@@ -143,10 +149,10 @@ class Checkboxer {
      */
     toggleCheckbox(type, name, state) {
         const selector = `.${type}-checkbox[data-name="${this.escapeCssSelector(name)}"]`;
-        console.log(`Toggling ${type} checkbox:`, { name, state, selector });
+        console.log('[Checkboxer DEBUG]', `Toggling ${type} checkbox:`, { name, state, selector });
         const checkbox = document.querySelector(selector);
         if (checkbox) {
-            console.log(`Found checkbox for ${name}, setting checked=${state}`);
+            console.log('[Checkboxer DEBUG]', `Found checkbox for ${name}, setting checked=${state}`);
             checkbox.checked = state;
             // Trigger change event to ensure any listeners are notified
             const event = new Event('change');

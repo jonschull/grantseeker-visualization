@@ -29,6 +29,8 @@ The following items are preserved from earlier planning and are not part of the 
 
 # Immediate Next Steps implement Stateful Checkbox Architecture for GrantSeekerWeb:
 
+>>>WE ARE HERE see Change Log<<<<
+
 ## 1. Problem Statement
 
 As the GrantSeekerWeb visualization evolves, the UI state (especially checkbox selections) must remain robust, shareable, and recoverable—even as the underlying data model (e.g., Funders, Propositions) changes. The primary challenges are:
@@ -44,6 +46,7 @@ As the GrantSeekerWeb visualization evolves, the UI state (especially checkbox s
 - Each checkbox is assigned [by what? the generate_visualzation script??] a unique, stable identifier (the record’s ID).
 - The URL encodes the state of each checkbox by its ID, e.g. `?checked=recA,recB,recC`.
 - Special-case checkboxes (e.g., "AllPropositions") use reserved IDs.
+- **NOTE:** With current Airtable record IDs (17 chars each), browser compatibility limits us to about 110 checked boxes before the URL becomes too long (2,000 chars). If the number of selectable items grows, we will need to implement a more compact encoding or server-side state. This is not urgent, but should be revisited if the project/funder count approaches this limit.
 
 ### 2.2. Embedded RECORD_NAME_ID Mapping
 - Every generated HTML file includes, in an informational HTML comment or `<script type="application/json">`, a mapping of `{Record Name: Record ID}` for all checkboxes.
@@ -191,3 +194,46 @@ As the GrantSeekerWeb visualization evolves, the UI state (especially checkbox s
 ## 7. Next Steps
 - Review and iterate on this document.
 - Once approved, proceed with Step 1 and validate before implementing further steps.
+- **NEW:** Implement automated browser-based monitoring of JavaScript console errors during regression and pipeline runs.
+
+### How to Bootstrap and Use Automated Console Error Checking
+1. **Serve the visualization via a local HTTP server.**
+    - Use `python3 -m http.server 8000 --directory System/visualization/outputs` or similar.
+2. **Launch the pipeline without the `--no-browser` option.**
+    - Example: `python System/visualization/FreshVisualization.py`
+    - This will open the output HTML in your default browser automatically.
+3. **Ensure the Windsurf MCP browser extension is installed and active in your default browser.**
+    - If not installed, request the extension from Windsurf/Cascade support and follow installation instructions.
+    - After installation, pin it to your browser toolbar and connect the tab when prompted.
+4. **Automated monitoring will check for:**
+    - JavaScript errors, warnings (including library/CDN deprecations), and 404/network errors (e.g., missing favicon).
+    - Any detected issues will be surfaced and reported during validation.
+5. **If the extension is not available:**
+    - Manually open the browser console (F12 or right-click > Inspect > Console) and review for errors/warnings after each run.
+    - Report any issues to Cascade for further automation or troubleshooting.
+
+    This process ensures robust, browser-based validation and regression safety for all HTML outputs.
+
+---
+
+## [JULY 2025] Technical Plan: Stable Checkbox IDs and Mapping Embedding (Recovery Anchor)
+
+### Rationale
+- Ensure all checkboxes in the visualization have stable, unique IDs based on Airtable record IDs, not just names or order.
+- Embed the `{Record Name: Record ID}` mapping in the HTML for diagnostics and future recovery.
+- Support robust, shareable, and evolvable UI state encoding (e.g., in URLs).
+
+### Steps
+1. Update the pipeline (`generate_visualization.py`) to load the Airtable mapping (`airtable_mapping.json`) and make `{name: id}` mappings available to the template.
+2. Update the HTML template (`visualization_template.html`) to assign each checkbox a stable `id` (and/or `name`/`data-id`) attribute based on the record ID, while still displaying the human-readable name.
+3. Embed the `{Record Name: Record ID}` mapping in the HTML (e.g., as a JSON block or HTML comment) for diagnostics.
+4. Run the regression test after each change to ensure no unintended differences, and only update the Golden Master after explicit review.
+5. Document each incremental achievement in `System/milestone_changelog.md` with date, commit hash, and description.
+
+### Process Discipline
+- All changes must be incremental, regression-tested, and explicitly documented.
+- No server restarts should be required; all updates must be hot-reloadable.
+- Manual review and approval are required before updating the Golden Master or merging changes.
+- Update onboarding and bootstrap documentation as needed to reflect new process discipline.
+
+---

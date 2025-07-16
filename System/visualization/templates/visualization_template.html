@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <title>Opportunity Landscape</title> <!-- Title will be dynamically set by JS -->
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
     
 <style>
     .custom-legend {
@@ -87,7 +87,10 @@
 
     // {NAME_TO_ID_PLACEHOLDER}
     <script>
+        // === [GSW DEBUG] If you see this, console monitoring is working ===
+        console.log('[GSW DEBUG] Console monitoring active');
         document.addEventListener('DOMContentLoaded', function() {
+            console.log('[GrantSeekerWeb] Main script running');
             // =========================================================================
             // 1. DATA INITIALIZATION
             // =========================================================================
@@ -349,10 +352,18 @@
                 const initScript = document.createElement('script');
                 initScript.textContent = `
                     // Wait for DOM and Checkboxer to be available
+                    console.log('[GSW DEBUG] Checkboxer config:', ${JSON.stringify(viewConfig)});
                     const checkCheckboxer = setInterval(() => {
                         if (typeof Checkboxer !== 'undefined') {
                             clearInterval(checkCheckboxer);
-                            new Checkboxer(${JSON.stringify(viewConfig)});
+                            console.log('[GSW DEBUG] About to instantiate Checkboxer');
+                            const checkboxer = new Checkboxer(${JSON.stringify(viewConfig)});
+                            setTimeout(() => {
+                                console.log('[GSW DEBUG] All checkbox states after Checkboxer:');
+                                document.querySelectorAll('.prop-checkbox, .funder-checkbox').forEach(cb => {
+                                    console.log('[GSW DEBUG]', cb.getAttribute('data-id'), cb.checked);
+                                });
+                            }, 500);
                         }
                     }, 100);
                 `;
@@ -430,16 +441,54 @@
                 document.getElementById('toggleAllProps').addEventListener('change', function(e) {
                     document.querySelectorAll('.prop-checkbox').forEach(cb => { cb.checked = e.target.checked; });
                     updatePlotVisibility();
+                    // --- Use setTimeout to ensure DOM state is settled before updating the URL ---
+                    // This prevents any race condition between DOM updates and URL sync after bulk toggle.
+                    setTimeout(() => {
+                        const checkedIds = Array.from(document.querySelectorAll('.prop-checkbox:checked, .funder-checkbox:checked'))
+                            .map(cb => cb.getAttribute('data-id'))
+                            .filter(Boolean);
+                        const query = checkedIds.length > 0 ? `?checked=${checkedIds.join(',')}` : '';
+                        console.log('[AllProps Toggle Handler] checkedIds:', checkedIds);
+                        console.log('[AllProps Toggle Handler] query:', query);
+                        window.history.replaceState(null, '', window.location.pathname + query);
+                    }, 0);
                 });
                 document.getElementById('toggleAllFunders').addEventListener('change', function(e) {
                     document.querySelectorAll('.funder-checkbox').forEach(cb => { cb.checked = e.target.checked; });
                     updatePlotVisibility();
+                    // --- Use setTimeout to ensure DOM state is settled before updating the URL ---
+                    // This prevents any race condition between DOM updates and URL sync after bulk toggle.
+                    setTimeout(() => {
+                        const checkedIds = Array.from(document.querySelectorAll('.prop-checkbox:checked, .funder-checkbox:checked'))
+                            .map(cb => cb.getAttribute('data-id'))
+                            .filter(Boolean);
+                        const query = checkedIds.length > 0 ? `?checked=${checkedIds.join(',')}` : '';
+                        console.log('[AllFunders Toggle Handler] checkedIds:', checkedIds);
+                        console.log('[AllFunders Toggle Handler] query:', query);
+                        window.history.replaceState(null, '', window.location.pathname + query);
+                    }, 0);
                 });
 
                 // --- Step 3: Attach a single event listener to each individual checkbox.
-                document.querySelectorAll('.prop-checkbox, .funder-checkbox').forEach(cb => {
-                    cb.addEventListener('change', updatePlotVisibility);
+                console.log('[GSW DEBUG] About to attach event listeners to checkboxes...');
+                const allCheckboxes = document.querySelectorAll('.prop-checkbox, .funder-checkbox');
+                allCheckboxes.forEach(cb => {
+                    cb.addEventListener('change', function() {
+                        updatePlotVisibility();
+                        // --- Update URL with checked IDs ---
+                        const checkedIds = Array.from(document.querySelectorAll('.prop-checkbox:checked, .funder-checkbox:checked'))
+                            .map(cb => cb.getAttribute('data-id'))
+                            .filter(Boolean);
+                        const query = checkedIds.length > 0 ? `?checked=${checkedIds.join(',')}` : '';
+                        console.log('[Checkbox Change Handler] checkedIds:', checkedIds);
+                        console.log('[Checkbox Change Handler] query:', query);
+                        window.history.replaceState(null, '', window.location.pathname + query);
+                    });
                 });
+                // Log after attaching event listeners
+                const ids = Array.from(allCheckboxes).map(cb => cb.getAttribute('data-id'));
+                console.log(`[GSW DEBUG] Attached event listeners to ${allCheckboxes.length} checkboxes. data-ids:`, ids);
+                console.log('[GSW DEBUG] Finished attaching event listeners');
 
                 // --- Step 4: Perform the initial plot update based on the default checkbox states.
                 updatePlotVisibility();
@@ -451,5 +500,26 @@
     <script data-checkboxer>
         // The checkboxer script will be injected here
     </script>
-</body>
+    <script>
+        // Static Checkboxer instantiation for diagnosis (runs even from file://)
+        document.addEventListener('DOMContentLoaded', function() {
+            function tryInstantiateCheckboxer() {
+                if (typeof Checkboxer !== 'undefined' && typeof Plotly !== 'undefined' && document.getElementById('plotly-div')) {
+                    console.log('[GSW DEBUG] Static: About to instantiate Checkboxer');
+                    const config = typeof viewConfig !== 'undefined' ? viewConfig : (window.viewConfig || {});
+                    window._checkboxer = new Checkboxer(config);
+                    setTimeout(() => {
+                        console.log('[GSW DEBUG] Static: All checkbox states after Checkboxer:');
+                        document.querySelectorAll('.prop-checkbox, .funder-checkbox').forEach(cb => {
+                            console.log('[GSW DEBUG]', cb.getAttribute('data-id'), cb.checked);
+                        });
+                    }, 500);
+                } else {
+                    setTimeout(tryInstantiateCheckboxer, 100);
+                }
+            }
+            tryInstantiateCheckboxer();
+        });
+    </script>
+    </body>
 </html>

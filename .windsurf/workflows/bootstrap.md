@@ -41,25 +41,3 @@ description: Manually bootstrap Cascade's context by reading all foundational do
 Do not skip any step or make assumptions about missing files.**
 
 ---
-
-## [JULY 2025] Technical Plan: Stable Checkbox IDs and Mapping Embedding
-
-### Rationale
-- Ensure all checkboxes in the visualization have stable, unique IDs based on Airtable record IDs, not just names or order.
-- Embed the `{Record Name: Record ID}` mapping in the HTML for diagnostics and future recovery.
-- Support robust, shareable, and evolvable UI state encoding (e.g., in URLs).
-
-### Steps
-1. Update the pipeline (`generate_visualization.py`) to load the Airtable mapping (`airtable_mapping.json`) and make `{name: id}` mappings available to the template.
-2. Update the HTML template (`visualization_template.html`) to assign each checkbox a stable `id` (and/or `name`/`data-id`) attribute based on the record ID, while still displaying the human-readable name.
-3. Embed the `{Record Name: Record ID}` mapping in the HTML (e.g., as a JSON block or HTML comment) for diagnostics.
-4. Run the regression test after each change to ensure no unintended differences, and only update the Golden Master after explicit review.
-5. Document each incremental achievement in `System/milestone_changelog.md` with date, commit hash, and description.
-
-### Process Discipline
-- All changes must be incremental, regression-tested, and explicitly documented.
-- No server restarts should be required; all updates must be hot-reloadable.
-- Manual review and approval are required before updating the Golden Master or merging changes.
-- Update onboarding and bootstrap documentation as needed to reflect new process discipline.
-
----
