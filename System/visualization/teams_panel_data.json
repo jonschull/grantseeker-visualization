@@ -1,0 +1,104 @@
+[
+  {
+    "id": "recMgdxHKmrXBafhF",
+    "name": "bioaerosols",
+    "nickname": "bioaerosols",
+    "proposition_ids": [
+      "rec4PYFqISYqpZLdN"
+    ],
+    "proposition_names": [
+      "Experimental Proposal: Bioaerosol Influence on Conversion and Capture of Atmospheric Moisture"
+    ],
+    "url": "?checked=all_funders,rec4PYFqISYqpZLdN"
+  },
+  {
+    "id": "recNx6KltoPu7YHRa",
+    "name": "grant_mongers",
+    "nickname": "grant_mongers",
+    "proposition_ids": [
+      "recQTpUUFGvVZ9W4I"
+    ],
+    "proposition_names": [
+      "General Support for ERA Network"
+    ],
+    "url": "?checked=all_funders,recQTpUUFGvVZ9W4I"
+  },
+  {
+    "id": "recRFm8OaiFNCqBht",
+    "name": "uganda_regen_alliance",
+    "nickname": "Uganda",
+    "proposition_ids": [
+      "recjFeyiAVujMbhPX",
+      "rec6ns2SYd7pIDWXp",
+      "recnDibK6Ia2eQN0R"
+    ],
+    "proposition_names": [
+      "Nakivale Regenerative Ecosystem Development Program (Diana leads)",
+      "Refugee Program for Microloans and Regenerative Agriculture ",
+      "Edwards Hamlet Regen Campus: A Vision for Regenerative Living "
+    ],
+    "url": "?checked=all_funders,recjFeyiAVujMbhPX,rec6ns2SYd7pIDWXp,recnDibK6Ia2eQN0R"
+  },
+  {
+    "id": "recYZPUxDNugWkp5V",
+    "name": "panama_restoration_lab",
+    "nickname": "panama",
+    "proposition_ids": [
+      "rec62E9tEGDRbE90c"
+    ],
+    "proposition_names": [
+      "Panama Restoration Lab "
+    ],
+    "url": "?checked=all_funders,rec62E9tEGDRbE90c"
+  },
+  {
+    "id": "recgW6qrCjkDwY4fq",
+    "name": "Global",
+    "nickname": "Global",
+    "proposition_ids": [
+      "recjFeyiAVujMbhPX",
+      "rec6ns2SYd7pIDWXp",
+      "recZbUaEbqfgrK6rB",
+      "rec2d1T1tkMFIwKCi",
+      "rec62E9tEGDRbE90c",
+      "rec4PYFqISYqpZLdN",
+      "recnDibK6Ia2eQN0R",
+      "recQTpUUFGvVZ9W4I"
+    ],
+    "proposition_names": [
+      "Nakivale Regenerative Ecosystem Development Program (Diana leads)",
+      "Refugee Program for Microloans and Regenerative Agriculture ",
+      "Hearth Miyawaki and Food Forest Project (Coakee leads)",
+      "AI Oracle of EcoRestoration",
+      "Panama Restoration Lab ",
+      "Experimental Proposal: Bioaerosol Influence on Conversion and Capture of Atmospheric Moisture",
+      "Edwards Hamlet Regen Campus: A Vision for Regenerative Living ",
+      "General Support for ERA Network"
+    ],
+    "url": "?checked=all_funders,recjFeyiAVujMbhPX,rec6ns2SYd7pIDWXp,recZbUaEbqfgrK6rB,rec2d1T1tkMFIwKCi,rec62E9tEGDRbE90c,rec4PYFqISYqpZLdN,recnDibK6Ia2eQN0R,recQTpUUFGvVZ9W4I"
+  },
+  {
+    "id": "recihgTyHHWsI7UL8",
+    "name": "AI Oracle of EcoRestoration",
+    "nickname": "AI_Oracle",
+    "proposition_ids": [
+      "rec2d1T1tkMFIwKCi"
+    ],
+    "proposition_names": [
+      "AI Oracle of EcoRestoration"
+    ],
+    "url": "?checked=all_funders,rec2d1T1tkMFIwKCi"
+  },
+  {
+    "id": "recxhY9ZolWxL4q7O",
+    "name": "hearth_miyawaki",
+    "nickname": "hearth_miyawaki",
+    "proposition_ids": [
+      "recZbUaEbqfgrK6rB"
+    ],
+    "proposition_names": [
+      "Hearth Miyawaki and Food Forest Project (Coakee leads)"
+    ],
+    "url": "?checked=all_funders,recZbUaEbqfgrK6rB"
+  }
+]

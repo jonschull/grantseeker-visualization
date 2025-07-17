@@ -83,6 +83,7 @@
 <div id="propositions-legend" class="custom-legend" style="left: 55%; width: 20%;"></div>
 <div id="funders-legend" class="custom-legend" style="left: 77%; width: 20%;"></div>
 
+    <!-- TEAMS_PANEL_PLACEHOLDER -->
     <div id="plotly-div" style="width:100%; height:90vh;"></div>
 
     // {NAME_TO_ID_PLACEHOLDER}
@@ -284,8 +285,19 @@
                 const allCheckboxes = document.querySelectorAll('.prop-checkbox, .funder-checkbox');
                 const idSet = new Set(checkedIds);
                 let missingIds = [];
+                // Support special token 'all_funders' to turn on all funders via the master checkbox
+                const allFundersCheckbox = document.getElementById('toggleAllFunders');
+                if (idSet.has('all_funders') && allFundersCheckbox) {
+                    allFundersCheckbox.checked = true;
+                    allFundersCheckbox.dispatchEvent(new Event('change'));
+                    idSet.delete('all_funders'); // Prevent treating as a regular checkbox
+                }
                 allCheckboxes.forEach(cb => {
                     const cbId = cb.getAttribute('data-id');
+                    // If all_funders was present and this is a funder checkbox, leave as set by the master toggle
+                    if (cb.classList.contains('funder-checkbox') && allFundersCheckbox && allFundersCheckbox.checked && checkedParam.includes('all_funders')) {
+                        return;
+                    }
                     if (idSet.has(cbId)) {
                         cb.checked = true;
                     } else {
