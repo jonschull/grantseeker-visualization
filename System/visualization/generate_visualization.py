@@ -30,9 +30,14 @@ from datetime import datetime
 import sys
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 from create_mapping_dict import load_mapping_from_file, lookup_id
+from generate_teams_panel_html_from_json import generate_teams_panel_html_from_json
 
 import subprocess
 from datetime import timezone
+
+# --- Teams Panel Generation ---
+# def generate_teams_panel_html(mapping):
+#     # [Legacy function removed in favor of standalone version. See generate_teams_panel_html_from_json.py]
 
 def get_git_commit_hash():
     try:
@@ -106,6 +111,7 @@ except FileNotFoundError:
     print(f"Error: Template file not found at {template_path}")
     exit()
 
+
 # Load the main JSON data file.
 try:
     with open(data_path, 'r', encoding='utf-8') as f:
@@ -145,6 +151,14 @@ if mapping:
         rec_id = lookup_id(mapping, "Funders", "FUNDER'S NAME", name)
         if rec_id:
             funder_name_to_id[name] = rec_id
+    # --- Inject Teams Panel HTML ---
+    teams_panel_html = generate_teams_panel_html_from_json(os.path.join(script_dir, 'teams_panel_data.json'))
+    # Insert panel above the plotly-div
+    if '<!-- TEAMS_PANEL_PLACEHOLDER -->' in template_string:
+        template_string = template_string.replace('<!-- TEAMS_PANEL_PLACEHOLDER -->', teams_panel_html)
+    else:
+        # Insert above the plotly-div
+        template_string = template_string.replace('<div id="plotly-div"', teams_panel_html + '\n<div id="plotly-div"')
 else:
     print("[WARN] No mapping loaded. Name-to-ID dicts will be empty.")
 

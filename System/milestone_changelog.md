@@ -10,6 +10,7 @@ A simple, auditable log of key incremental achievements, decisions, and state ch
 | 2025-07-15 21:12 EDT  | Update bootstrap workflow to explicitly load and reference milestone changelog | 48fff13     | [Your Name] | .windsurf/workflows/bootstrap.md now ensures System/milestone_changelog.md is always recovered and acknowledged |
 | 2025-07-15 22:55 EDT  | Promote stamp-enabled HTML output as new Golden Master (includes code/data versioning for reproducibility) | 9c906a3     | jonschull   | HTML, Python, and mapping versions now paired in metadata |
 | 2025-07-16 14:47 EDT  | Update milestone plan: robust, incremental, and AI/human-friendly stateful checkbox architecture. See current_milestone.md section 7 for new stepwise implementation plan. | [commit] | [Your Name] | Plan emphasizes modular sync logic, regression testing, onboarding discipline |
+| 2025-07-16 23:24 EDT  | Close milestone: Architecture docs moved, Teams panel dataflow refactored, robust publishing pipeline, full documentation and changelog discipline. | 3ebe358 | jonschull | Canonical architecture and mapping docs, robust HTML publishing, changelog and process discipline enforced. |
 
 ## Usage
 - **Who updates:** Anyone making a significant, reviewable change to the system.
